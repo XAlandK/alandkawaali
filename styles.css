@@ -281,7 +281,7 @@ a { color: inherit; }
 
 .shelf {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 12px;
   margin-top: clamp(40px, 6vw, 64px);
 }
@@ -577,7 +577,13 @@ html[dir="rtl"] .btn > svg:last-child { transform: scaleX(-1); }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 860px) {
-  .shelf { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  /* Rows of four, with the shorter last row centred. */
+  .shelf {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .shelf a { flex: 0 0 calc((100% - 3 * 12px) / 4); }
 }
 
 @media (max-width: 680px) {
@@ -597,7 +603,11 @@ html[dir="rtl"] .btn > svg:last-child { transform: scaleX(-1); }
 
 @media (max-width: 420px) {
   .shelf { gap: 8px; }
-  .shelf a { padding: 14px 4px 12px; font-size: 12px; }
+  .shelf a {
+    flex-basis: calc((100% - 3 * 8px) / 4);
+    padding: 14px 4px 12px;
+    font-size: 12px;
+  }
   .shelf img { width: 48px; height: 48px; border-radius: 11px; }
   .nav a { padding: 6px 8px; }
 }
