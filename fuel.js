@@ -88,6 +88,11 @@
   // the map has been clicked, so scrolling down the page doesn't get caught by it.
   const map = L.map(mapElement, { scrollWheelZoom: false }).setView([36.1, 44.4], 8);
   map.attributionControl.setPrefix(false);
+
+  // On desktop the map's height follows the column beside it, so it can change without
+  // the window being resized. Leaflet is told to re-measure whenever that happens.
+  if ('ResizeObserver' in window) new ResizeObserver(() => map.invalidateSize()).observe(mapElement);
+
   map.on('click', () => map.scrollWheelZoom.enable());
   map.on('mouseout', () => map.scrollWheelZoom.disable());
 

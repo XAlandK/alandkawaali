@@ -32,46 +32,52 @@
     <a href="fuel.html" lang="en" hreflang="en">English</a>
   </header>
 
-  <main>
-    <h1>ژمێرەری تێچووی بەنزین</h1>
-    <p class="lead">تێچووی بەنزینی سوپەر بۆ گەشتێک بە ئۆتۆمبێلی <span lang="en" dir="ltr">BYD Qin Plus DM-i</span> بخەمڵێنە.</p>
-
-    <div id="map" class="map" dir="ltr" role="group" aria-label="نەخشە بۆ هەڵبژاردنی ڕێگا"></div>
-    <p class="map-status">
-      <span id="mapStatus" aria-live="polite"></span>
-      <button id="clearRoute" class="link-button" type="button" hidden>سڕینەوە</button>
-    </p>
-
-    <div class="field field-row">
-      <label for="distance">درێژیی ڕێگا</label>
-      <span><input id="distance" type="number" min="0" step="0.1" value="90" dir="ltr"> <span class="unit">کیلۆمەتر</span></span>
+  <main class="calc">
+    <div class="calc-intro">
+      <h1>ژمێرەری تێچووی بەنزین</h1>
+      <p class="lead">تێچووی بەنزینی سوپەر بۆ گەشتێک بە ئۆتۆمبێلی <span lang="en" dir="ltr">BYD Qin Plus DM-i</span> بخەمڵێنە.</p>
     </div>
 
-    <div class="field">
-      <div class="field-row">
-        <label for="consumption">بەکارهێنانی بەنزین</label>
-        <span id="consumptionValue"></span>
+    <div class="calc-map">
+      <div id="map" class="map" dir="ltr" role="group" aria-label="نەخشە بۆ هەڵبژاردنی ڕێگا"></div>
+      <p class="map-status">
+        <span id="mapStatus" aria-live="polite"></span>
+        <button id="clearRoute" class="link-button" type="button" hidden>سڕینەوە</button>
+      </p>
+    </div>
+
+    <div class="calc-form">
+      <div class="field field-row">
+        <label for="distance">درێژیی ڕێگا</label>
+        <span><input id="distance" type="number" min="0" step="0.1" value="90" dir="ltr"> <span class="unit">کیلۆمەتر</span></span>
       </div>
-      <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317">
-      <p class="hint">زیادی بکە بۆ ئەوەی خێرا لێخوڕین و لێخوڕینی قورستر تاقی بکەیتەوە.</p>
+
+      <div class="field">
+        <div class="field-row">
+          <label for="consumption">بەکارهێنانی بەنزین</label>
+          <span id="consumptionValue"></span>
+        </div>
+        <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317">
+        <p class="hint">زیادی بکە بۆ ئەوەی خێرا لێخوڕین و لێخوڕینی قورستر تاقی بکەیتەوە.</p>
+      </div>
+
+      <div class="field field-row">
+        <label for="price">نرخی بەنزینی سوپەر</label>
+        <span><input id="price" type="number" inputmode="numeric" min="0" step="1" value="1900" dir="ltr"> <span class="unit">دینار/لیتر</span></span>
+      </div>
+
+      <dl class="result">
+        <div class="total" aria-live="polite"><dt>تێچووی خەمڵێنراوی بەنزین</dt><dd id="cost"></dd></div>
+        <div><dt>بەنزین</dt><dd id="litres"></dd></div>
+        <div><dt>بۆ هەر کیلۆمەترێک</dt><dd id="perKm"></dd></div>
+        <div><dt>بۆ هەر ١٠٠ کیلۆمەتر</dt><dd id="per100"></dd></div>
+      </dl>
+
+      <p class="note">
+        بەکارهێنانی سەرەتایی پێوانەکراوە: ٥٫٢٦ لیتر بۆ ٢٢٧ کیلۆمەتر، بە ١٠٬٠٠٠ دینار. تەنیا بەنزین دەژمێرێت و
+        تێچووی کارەبا لەخۆ ناگرێت.
+      </p>
     </div>
-
-    <div class="field field-row">
-      <label for="price">نرخی بەنزینی سوپەر</label>
-      <span><input id="price" type="number" min="0" step="1" value="1900" dir="ltr"> <span class="unit">دینار/لیتر</span></span>
-    </div>
-
-    <dl class="result">
-      <div class="total" aria-live="polite"><dt>تێچووی خەمڵێنراوی بەنزین</dt><dd id="cost"></dd></div>
-      <div><dt>بەنزین</dt><dd id="litres"></dd></div>
-      <div><dt>بۆ هەر کیلۆمەترێک</dt><dd id="perKm"></dd></div>
-      <div><dt>بۆ هەر ١٠٠ کیلۆمەتر</dt><dd id="per100"></dd></div>
-    </dl>
-
-    <p class="note">
-      بەکارهێنانی سەرەتایی پێوانەکراوە: ٥٫٢٦ لیتر بۆ ٢٢٧ کیلۆمەتر، بە ١٠٬٠٠٠ دینار. تەنیا بەنزین دەژمێرێت و
-      تێچووی کارەبا لەخۆ ناگرێت.
-    </p>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>

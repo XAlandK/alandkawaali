@@ -28,46 +28,52 @@
     <a href="fuel-ku.html" lang="ckb" hreflang="ckb">کوردی</a>
   </header>
 
-  <main>
-    <h1>Fuel Cost Calculator</h1>
-    <p class="lead">Estimate the Super petrol cost of a journey in a BYD Qin Plus DM-i.</p>
-
-    <div id="map" class="map" dir="ltr" role="group" aria-label="Map for picking a route"></div>
-    <p class="map-status">
-      <span id="mapStatus" aria-live="polite"></span>
-      <button id="clearRoute" class="link-button" type="button" hidden>Clear</button>
-    </p>
-
-    <div class="field field-row">
-      <label for="distance">Distance</label>
-      <span><input id="distance" type="number" min="0" step="0.1" value="90"> <span class="unit">km</span></span>
+  <main class="calc">
+    <div class="calc-intro">
+      <h1>Fuel Cost Calculator</h1>
+      <p class="lead">Estimate the Super petrol cost of a journey in a BYD Qin Plus DM-i.</p>
     </div>
 
-    <div class="field">
-      <div class="field-row">
-        <label for="consumption">Fuel consumption</label>
-        <span id="consumptionValue"></span>
+    <div class="calc-map">
+      <div id="map" class="map" dir="ltr" role="group" aria-label="Map for picking a route"></div>
+      <p class="map-status">
+        <span id="mapStatus" aria-live="polite"></span>
+        <button id="clearRoute" class="link-button" type="button" hidden>Clear</button>
+      </p>
+    </div>
+
+    <div class="calc-form">
+      <div class="field field-row">
+        <label for="distance">Distance</label>
+        <span><input id="distance" type="number" min="0" step="0.1" value="90"> <span class="unit">km</span></span>
       </div>
-      <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317">
-      <p class="hint">Raise it to simulate faster acceleration, higher speeds or more demanding driving.</p>
+
+      <div class="field">
+        <div class="field-row">
+          <label for="consumption">Fuel consumption</label>
+          <span id="consumptionValue"></span>
+        </div>
+        <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317">
+        <p class="hint">Raise it to simulate faster acceleration, higher speeds or more demanding driving.</p>
+      </div>
+
+      <div class="field field-row">
+        <label for="price">Super petrol price</label>
+        <span><input id="price" type="number" inputmode="numeric" min="0" step="1" value="1900"> <span class="unit">IQD per litre</span></span>
+      </div>
+
+      <dl class="result">
+        <div class="total" aria-live="polite"><dt>Estimated petrol cost</dt><dd id="cost"></dd></div>
+        <div><dt>Fuel</dt><dd id="litres"></dd></div>
+        <div><dt>Per km</dt><dd id="perKm"></dd></div>
+        <div><dt>Per 100 km</dt><dd id="per100"></dd></div>
+      </dl>
+
+      <p class="note">
+        The starting consumption is measured: 5.26 L used over 227 km, for 10,000 IQD. This counts petrol only;
+        electricity isn't included.
+      </p>
     </div>
-
-    <div class="field field-row">
-      <label for="price">Super petrol price</label>
-      <span><input id="price" type="number" min="0" step="1" value="1900"> <span class="unit">IQD per litre</span></span>
-    </div>
-
-    <dl class="result">
-      <div class="total" aria-live="polite"><dt>Estimated petrol cost</dt><dd id="cost"></dd></div>
-      <div><dt>Fuel</dt><dd id="litres"></dd></div>
-      <div><dt>Per km</dt><dd id="perKm"></dd></div>
-      <div><dt>Per 100 km</dt><dd id="per100"></dd></div>
-    </dl>
-
-    <p class="note">
-      The starting consumption is measured: 5.26 L used over 227 km, for 10,000 IQD. This counts petrol only;
-      electricity isn't included.
-    </p>
   </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>

@@ -11,7 +11,8 @@ ku.html        the home page in Central Kurdish, right-to-left (served at /ku)
 fuel.html      the fuel cost calculator in English (served at /fuel)
 fuel-ku.html   the fuel cost calculator in Central Kurdish (served at /fuel-ku)
 fuel.js        the calculator and its route map, shared by both calculator pages
-styles.css     all styles; light and dark follow the visitor's system setting
+styles.css     all styles: one column on phones and tablets, two columns from 960px wide;
+               light and dark follow the visitor's system setting
 favicon.svg    the tab icon
 images/        app icons
 vercel.json    clean URLs and image caching
