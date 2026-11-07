@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fuel Cost Calculator — Aland Kawa Ali</title>
+  <meta name="description" content="Estimate the Super petrol cost of a journey in a BYD Qin Plus DM-i. Pick a route on the map and it measures the distance for you.">
+  <meta name="author" content="Aland Kawa Ali">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fuel Cost Calculator">
+  <meta property="og:description" content="Estimate the Super petrol cost of a journey in a BYD Qin Plus DM-i. Pick a route on the map and it measures the distance for you.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="alternate" hreflang="en" href="fuel">
+  <link rel="alternate" hreflang="ckb" href="fuel-ku">
+
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-head">
+    <a href="./">Aland Kawa Ali</a>
+    <a href="fuel-ku.html" lang="ckb" hreflang="ckb">کوردی</a>
+  </header>
+
+  <main>
+    <h1>Fuel Cost Calculator</h1>
+    <p class="lead">Estimate the Super petrol cost of a journey in a BYD Qin Plus DM-i.</p>
+
+    <div id="map" class="map" dir="ltr" role="group" aria-label="Map for picking a route"></div>
+    <p class="map-status">
+      <span id="mapStatus" aria-live="polite"></span>
+      <button id="clearRoute" class="link-button" type="button" hidden>Clear</button>
+    </p>
+
+    <div class="field field-row">
+      <label for="distance">Distance</label>
+      <span><input id="distance" type="number" min="0" step="0.1" value="90"> <span class="unit">km</span></span>
+    </div>
+
+    <div class="field">
+      <div class="field-row">
+        <label for="consumption">Fuel consumption</label>
+        <span id="consumptionValue"></span>
+      </div>
+      <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317">
+      <p class="hint">Raise it to simulate faster acceleration, higher speeds or more demanding driving.</p>
+    </div>
+
+    <div class="field field-row">
+      <label for="price">Super petrol price</label>
+      <span><input id="price" type="number" min="0" step="1" value="1900"> <span class="unit">IQD per litre</span></span>
+    </div>
+
+    <dl class="result">
+      <div class="total" aria-live="polite"><dt>Estimated petrol cost</dt><dd id="cost"></dd></div>
+      <div><dt>Fuel</dt><dd id="litres"></dd></div>
+      <div><dt>Per km</dt><dd id="perKm"></dd></div>
+      <div><dt>Per 100 km</dt><dd id="per100"></dd></div>
+    </dl>
+
+    <p class="note">
+      The starting consumption is measured: 5.26 L used over 227 km, for 10,000 IQD. This counts petrol only;
+      electricity isn't included.
+    </p>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="fuel.js"></script>
+</body>
+</html>

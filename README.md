@@ -1,17 +1,29 @@
 # alandkawaali
 
-Portfolio site for Aland Kawa Ali: Qurany Piroz, Pirsa, CêIT, Gospel of Barnabas, Zewyar and Zriwe.
+Portfolio site for Aland Kawa Ali: Qurany Piroz, Pirsa, CêIT, Gospel of Barnabas, Zewyar, Zriwe, Naser Subhani
+and the Fuel Cost Calculator.
 
-Plain HTML and CSS, no build step.
+Plain HTML, CSS and a little JavaScript, no build step.
 
 ```
-index.html     the page in English (served at /)
-ku.html        the page in Central Kurdish, right-to-left (served at /ku)
-styles.css     all styles, with light and dark themes and right-to-left rules
+index.html     the home page in English (served at /)
+ku.html        the home page in Central Kurdish, right-to-left (served at /ku)
+fuel.html      the fuel cost calculator in English (served at /fuel)
+fuel-ku.html   the fuel cost calculator in Central Kurdish (served at /fuel-ku)
+fuel.js        the calculator and its route map, shared by both calculator pages
+styles.css     all styles; light and dark follow the visitor's system setting
 favicon.svg    the tab icon
-images/        app icons (256 px)
+images/        app icons
 vercel.json    clean URLs and image caching
 ```
+
+## The route map
+
+The calculator's map uses [Leaflet](https://leafletjs.com) 1.9.4 from unpkg, map tiles from
+[OpenStreetMap](https://operations.osmfoundation.org/policies/tiles/) (shown in grey by `styles.css`), and
+driving distances from the public [OSRM](https://project-osrm.org) demo server, falling back to the FOSSGIS
+server behind openstreetmap.org. None of them need an API key. They are free services meant for light use, so if the site gets heavy traffic
+the router may need to be swapped for a paid one. If the map can't load, the distance can still be typed in.
 
 ## Preview locally
 
@@ -33,6 +45,6 @@ added later under the project's **Settings → Domains**.
 
 ## Adding a project
 
-Copy one `<article class="project">` block in `index.html`, change its `id`, number, text and links, add a
-256 px icon to `images/`, and add a matching link to the icon shelf near the top of the page. Then do the same
-in `ku.html` with the Kurdish text (Kurdish digits, e.g. ٠٧), keeping the same `id`.
+Copy one `<article class="project">` block in `index.html`, change its `id`, text and links, and add a square
+icon to `images/`. Then do the same in `ku.html` with the Kurdish text (Kurdish digits, e.g. ٢٠٢٦), keeping
+the same `id`.

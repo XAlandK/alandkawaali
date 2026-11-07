@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aland Kawa Ali — Apps &amp; Websites</title>
-  <meta name="description" content="Apps and websites by Aland Kawa Ali, in Kurdish, Arabic and English: Qurany Piroz, Pirsa, CêIT, Gospel of Barnabas, Zewyar, Zriwe and Naser Subhani.">
+  <meta name="description" content="Apps and websites by Aland Kawa Ali, in Kurdish, Arabic and English: Qurany Piroz, Pirsa, CêIT, Gospel of Barnabas, Zewyar, Zriwe, Naser Subhani and the Fuel Cost Calculator.">
   <meta name="author" content="Aland Kawa Ali">
 
   <meta property="og:type" content="website">
@@ -15,307 +15,241 @@
   <link rel="alternate" hreflang="en" href="./">
   <link rel="alternate" hreflang="ckb" href="ku">
 
-  <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
-  <script>
-    // Apply a saved theme before first paint so the page doesn't flash.
-    try {
-      var saved = localStorage.getItem('theme');
-      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
-    } catch (e) {}
-  </script>
 </head>
 <body>
-  <a class="skip" href="#projects">Skip to my work</a>
-
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="brand" href="#top" aria-label="Aland Kawa Ali, back to top">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <span class="brand-name">Aland Kawa Ali</span>
-      </a>
-      <nav class="nav" aria-label="Main">
-        <a href="#projects">My work</a>
-        <a href="#contact">Contact</a>
-        <a class="lang-switch" href="ku.html" lang="ckb" hreflang="ckb">کوردی</a>
-        <button class="theme-toggle" type="button" aria-label="Switch between light and dark">
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2 6 6M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
-        </button>
-      </nav>
-    </div>
+  <header class="site-head">
+    <h1>Aland Kawa Ali</h1>
+    <a href="ku.html" lang="ckb" hreflang="ckb">کوردی</a>
   </header>
 
-  <main id="top">
-    <section class="hero wrap">
-      <p class="eyebrow">My apps &amp; websites</p>
-      <h1>Apps that help people read, learn and look up at the sky.</h1>
-      <p class="lead">
-        I'm Aland Kawa Ali. I make easy-to-use apps and websites in Kurdish, Arabic and English:
-        for reading the Holy Quran and other books, studying for exams, learning about technology, and exploring
-        the stars. Most of them are free.
-      </p>
+  <main>
+    <p class="intro">
+      I make easy-to-use apps and websites in Kurdish, Arabic and English: for reading the Holy Quran and other
+      books, studying for exams, learning about technology, and exploring the stars. Most of them are free.
+    </p>
 
-      <ul class="facts" aria-label="At a glance">
-        <li><strong>7</strong> projects</li>
-        <li><strong>6</strong> apps on the App Store</li>
-        <li><strong>3</strong> languages: Kurdish, Arabic, English</li>
-      </ul>
+    <section id="projects">
+      <h2 class="section-label">Projects</h2>
 
-      <nav class="shelf" aria-label="Jump to a project">
-        <a href="#qurany-piroz"><img src="images/qurany-piroz.png" alt="" width="56" height="56"><span>Qurany Piroz</span></a>
-        <a href="#pirsa"><img src="images/pirsa.png" alt="" width="56" height="56"><span>Pirsa</span></a>
-        <a href="#ceit"><img class="tile-ceit" src="images/ceit.png" alt="" width="56" height="56"><span>CêIT</span></a>
-        <a href="#gospel-of-barnabas"><img src="images/gospel-of-barnabas.jpg" alt="" width="56" height="56"><span>Gospel of Barnabas</span></a>
-        <a href="#zewyar"><img src="images/zewyar.jpg" alt="" width="56" height="56"><span>Zewyar</span></a>
-        <a href="#zriwe"><img src="images/zriwe.jpg" alt="" width="56" height="56"><span>Zriwe</span></a>
-        <a href="#naser-subhani"><img src="images/naser-subhani.jpg" alt="" width="56" height="56"><span>Naser Subhani</span></a>
-      </nav>
-    </section>
-
-    <section id="projects" class="projects wrap" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section-title">My work</h2>
-
-      <!-- 01 · Qurany Piroz -->
       <article class="project" id="qurany-piroz">
-        <div class="project-side">
-          <span class="num">01</span>
-          <img class="app-icon" src="images/qurany-piroz.png" alt="Qurany Piroz app icon" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/qurany-piroz.png" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>Qurany Piroz</h3>
-            <p class="native" lang="ckb" dir="rtl">قورئانی پیرۆز — پەڕتووکی خودا</p>
-            <p class="platforms"><span class="since">Since 2017</span> · iPhone · Android · Website · Free</p>
+          <header class="title">
+            <h3>Qurany Piroz <span class="native" lang="ckb" dir="rtl">قورئانی پیرۆز</span></h3>
+            <p class="meta">Since 2017 · Free</p>
           </header>
-          <p class="summary">
-            <em>The Holy Quran — The Book of God.</em> A Kurdish app for reading and understanding
-            the Holy Quran. It comes in 16 languages and brings together 47 tafsirs
-            (explanations of the Quran) by scholars from around the world.
+          <p>
+            <em>The Holy Quran — The Book of God.</em> A Kurdish app for reading and understanding the Holy Quran.
+            It comes in 16 languages and brings together 47 tafsirs (explanations of the Quran) by scholars from
+            around the world.
           </p>
-          <ul class="highlights">
-            <li>Read the whole Quran anywhere, even without an internet connection.</li>
-            <li>Test what you know with a Quran quiz, or play it live against friends.</li>
-            <li>Send any verse to a friend as a link that opens right in the app.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id1240368293" target="_blank" rel="noopener">Get it for iPhone<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            <a class="btn" href="https://www.qurany-piroz.com" target="_blank" rel="noopener">Website &amp; Android<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id1240368293" target="_blank" rel="noopener">iPhone</a>
+            <a href="https://www.qurany-piroz.com" target="_blank" rel="noopener">Website &amp; Android</a>
+          </p>
+          <details>
+            <summary><span class="more">More</span><span class="less">Less</span></summary>
+            <ul>
+              <li>Read the whole Quran anywhere, even without an internet connection.</li>
+              <li>Test what you know with a Quran quiz, or play it live against friends.</li>
+              <li>Send any verse to a friend as a link that opens right in the app.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 02 · Pirsa -->
       <article class="project" id="pirsa">
-        <div class="project-side">
-          <span class="num">02</span>
-          <img class="app-icon" src="images/pirsa.png" alt="Pirsa app icon" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/pirsa.png" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>Pirsa <span class="subtitle">Turn notes into a quiz</span></h3>
-            <p class="native" lang="ckb" dir="rtl">پرسا</p>
-            <p class="platforms"><span class="since">Since 2025</span> · iPhone · Android · Free</p>
+          <header class="title">
+            <h3>Pirsa <span class="native" lang="ckb" dir="rtl">پرسا</span></h3>
+            <p class="meta">Since 2025 · Free</p>
           </header>
-          <p class="summary">
-            Turns your study material into a quiz. Choose a PDF or paste some text, pick how many
-            questions you want, and start answering. A simple way to revise before an exam.
+          <p>
+            Turns your study material into a quiz. Choose a PDF or paste some text, pick how many questions you
+            want, and start answering. A simple way to revise before an exam.
           </p>
-          <ul class="highlights">
-            <li>Six kinds of questions: multiple choice, true or false, written answers, putting things in order, filling in the blanks, and matching.</li>
-            <li>Works with Kurdish, Arabic and English, even photographed or scanned pages, and asks the questions in the same language as your notes.</li>
-            <li>In the Ardalani dialect of Kurdish, <em>pirsa</em> means “someone who seeks knowledge”.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id6747336675" target="_blank" rel="noopener">Get it for iPhone<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            <a class="btn" href="https://pirsa.web.app" target="_blank" rel="noopener">Get it for Android<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id6747336675" target="_blank" rel="noopener">iPhone</a>
+            <a href="https://pirsa.web.app" target="_blank" rel="noopener">Android</a>
+          </p>
+          <details>
+            <summary><span class="more">More</span><span class="less">Less</span></summary>
+            <ul>
+              <li>Six kinds of questions: multiple choice, true or false, written answers, putting things in order, filling in the blanks, and matching.</li>
+              <li>Works with Kurdish, Arabic and English, even photographed or scanned pages, and asks the questions in the same language as your notes.</li>
+              <li>In the Ardalani dialect of Kurdish, <em>pirsa</em> means “someone who seeks knowledge”.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 03 · CêIT -->
       <article class="project" id="ceit">
-        <div class="project-side">
-          <span class="num">03</span>
-          <img class="app-icon tile-ceit" src="images/ceit.png" alt="CêIT logo" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon icon-ceit" src="images/ceit.png" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>CêIT <span class="subtitle">Learn technology in Kurdish</span></h3>
-            <p class="native"><span lang="ckb" dir="rtl">جێ</span> <span class="gloss">(cê) means “place”: a place to learn IT</span></p>
-            <p class="platforms"><span class="since">Since 2026</span> · Website · Free</p>
+          <header class="title">
+            <h3>CêIT</h3>
+            <p class="meta">Since 2026 · Free</p>
           </header>
-          <p class="summary">
-            A free website where Kurdish students learn about computers and technology, in simple
-            English and Kurdish (Sorani). Every lesson can be read in English, in Kurdish, or both
-            side by side.
+          <p>
+            A free website where Kurdish students learn about computers and technology, in simple English and
+            Kurdish (Sorani). Every lesson can be read in English, in Kurdish, or both side by side.
           </p>
-          <ul class="highlights">
-            <li>Tap any technical word to see what it means in Kurdish and in English, with an example.</li>
-            <li>Learn by doing: build a computer network, program a robot, and see how a computer adds 2 + 2, right on the page.</li>
-            <li>Short lessons with quick questions to check yourself, and hand-picked videos.</li>
-            <li>Keeps working without internet once you've opened it. No sign-up and no ads.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://ceit.vercel.app" target="_blank" rel="noopener">Visit the website<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://ceit.vercel.app" target="_blank" rel="noopener">Website</a>
+          </p>
+          <details>
+            <summary><span class="more">More</span><span class="less">Less</span></summary>
+            <ul>
+              <li><span lang="ckb" dir="rtl">جێ</span> (cê) means “place”: a place to learn IT.</li>
+              <li>Tap any technical word to see what it means in Kurdish and in English, with an example.</li>
+              <li>Learn by doing: build a computer network, program a robot, and see how a computer adds 2 + 2, right on the page.</li>
+              <li>Short lessons with quick questions to check yourself, and hand-picked videos.</li>
+              <li>Keeps working without internet once you've opened it. No sign-up and no ads.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 04 · Gospel of Barnabas -->
       <article class="project" id="gospel-of-barnabas">
-        <div class="project-side">
-          <span class="num">04</span>
-          <img class="app-icon" src="images/gospel-of-barnabas.jpg" alt="Gospel of Barnabas app icon" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/gospel-of-barnabas.jpg" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>Gospel of Barnabas</h3>
-            <p class="native"><span lang="ckb" dir="rtl">ئینجیلی بەرنابا</span> <span class="sep" aria-hidden="true">·</span> <span lang="ar" dir="rtl">إنجيل برنابا</span></p>
-            <p class="platforms"><span class="since">Since 2017</span> · iPhone · iPad · Free</p>
+          <header class="title">
+            <h3>Gospel of Barnabas <span class="native" lang="ckb" dir="rtl">ئینجیلی بەرنابا</span></h3>
+            <p class="meta">Since 2017 · Free</p>
           </header>
-          <p class="summary">
-            An app for reading the Gospel of Barnabas in English, Arabic and Kurdish. Switch
-            language whenever you like and the whole app changes with it.
+          <p>
+            An app for reading the Gospel of Barnabas in English, Arabic and Kurdish. Switch language whenever you
+            like and the whole app changes with it.
           </p>
-          <ul class="highlights">
-            <li>All 222 chapters, with Barnabas's introduction, an Islamic commentary on 44 chapters, and five articles about the book.</li>
-            <li>A new, complete Kurdish translation.</li>
-            <li>Make the text bigger or smaller, search, save your favourite chapters, and share them.</li>
-            <li>Works without internet. No sign-up and no ads.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id1198747871" target="_blank" rel="noopener">Get it for iPhone &amp; iPad<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id1198747871" target="_blank" rel="noopener">iPhone &amp; iPad</a>
+          </p>
+          <details>
+            <summary><span class="more">More</span><span class="less">Less</span></summary>
+            <ul>
+              <li>All 222 chapters, with Barnabas's introduction, an Islamic commentary on 44 chapters, and five articles about the book.</li>
+              <li>A new, complete Kurdish translation.</li>
+              <li>Make the text bigger or smaller, search, save your favourite chapters, and share them.</li>
+              <li>Works without internet. No sign-up and no ads.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 05 · Zewyar -->
       <article class="project" id="zewyar">
-        <div class="project-side">
-          <span class="num">05</span>
-          <img class="app-icon" src="images/zewyar.jpg" alt="Zewyar app icon" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/zewyar.jpg" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>Zewyar <span class="subtitle">Space station tracker</span></h3>
-            <p class="native" lang="ckb" dir="rtl">زەویار</p>
-            <p class="platforms"><span class="since">Since 2026</span> · iPhone</p>
+          <header class="title">
+            <h3>Zewyar <span class="native" lang="ckb" dir="rtl">زەویار</span></h3>
+            <p class="meta">Since 2026</p>
           </header>
-          <p class="summary">
-            See where the International Space Station and China's Tiangong station are right now,
-            live on a map. The name joins <em>zewî</em> (earth) and <em>yar</em> (friend): stations
-            that circle the earth like a faithful friend.
+          <p>
+            See where the International Space Station and China's Tiangong station are right now, live on a map.
+            The name joins <em>zewî</em> (earth) and <em>yar</em> (friend): stations that circle the earth like a
+            faithful friend.
           </p>
-          <ul class="highlights">
-            <li>Watch the stations move across the map, see how fast and how high they're flying, and where on Earth it's day or night.</li>
-            <li>Get a reminder before a station flies over your city, so you can step outside and see it with your own eyes.</li>
-            <li>Learn about Muslim astronauts, and how they find the qibla and prayer times in space.</li>
-            <li>Entirely in Kurdish.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id6794162104" target="_blank" rel="noopener">Get it for iPhone<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id6794162104" target="_blank" rel="noopener">iPhone</a>
+          </p>
+          <details>
+            <summary><span class="more">More</span><span class="less">Less</span></summary>
+            <ul>
+              <li>Watch the stations move across the map, see how fast and how high they're flying, and where on Earth it's day or night.</li>
+              <li>Get a reminder before a station flies over your city, so you can step outside and see it with your own eyes.</li>
+              <li>Learn about Muslim astronauts, and how they find the qibla and prayer times in space.</li>
+              <li>Entirely in Kurdish.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 06 · Zriwe -->
       <article class="project" id="zriwe">
-        <div class="project-side">
-          <span class="num">06</span>
-          <img class="app-icon" src="images/zriwe.jpg" alt="Zriwe app icon" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/zriwe.jpg" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>Zriwe <span class="subtitle">Map of the night sky</span></h3>
-            <p class="native" lang="ckb" dir="rtl">زریوە — نەخشەی ئاسمان</p>
-            <p class="platforms"><span class="since">Since 2026</span> · iPhone · Free</p>
+          <header class="title">
+            <h3>Zriwe <span class="native" lang="ckb" dir="rtl">زریوە</span></h3>
+            <p class="meta">Since 2026 · Free</p>
           </header>
-          <p class="summary">
-            Hold your phone up to the night sky and Zriwe shows you what you're looking at: the
-            names of the stars, the shapes of the constellations, the planets, the Sun and the Moon.
+          <p>
+            Hold your phone up to the night sky and Zriwe shows you what you're looking at: the names of the stars,
+            the shapes of the constellations, the planets, the Sun and the Moon.
           </p>
-          <ul class="highlights">
-            <li>Over 3,000 stars and nearly 100 constellations, plus galaxies and star clusters.</li>
-            <li>See the path the Sun and the Moon will take across the sky today.</li>
-            <li>Just point and look: the map turns as you move your phone.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id6792790152" target="_blank" rel="noopener">Get it for iPhone<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            <a class="btn" href="https://zriwe-asman.web.app" target="_blank" rel="noopener">Visit the website<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id6792790152" target="_blank" rel="noopener">iPhone</a>
+            <a href="https://zriwe-asman.web.app" target="_blank" rel="noopener">Website</a>
+          </p>
+          <details>
+            <summary><span class="more">More</span><span class="less">Less</span></summary>
+            <ul>
+              <li>Over 3,000 stars and nearly 100 constellations, plus galaxies and star clusters.</li>
+              <li>See the path the Sun and the Moon will take across the sky today.</li>
+              <li>Just point and look: the map turns as you move your phone.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 07 · Naser Subhani -->
       <article class="project" id="naser-subhani">
-        <div class="project-side">
-          <span class="num">07</span>
-          <img class="app-icon" src="images/naser-subhani.jpg" alt="Naser Subhani app icon" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/naser-subhani.jpg" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>Naser Subhani <span class="subtitle">Digital library</span></h3>
-            <p class="native" lang="ckb" dir="rtl">مامۆستا ناسر سوبحانی</p>
-            <p class="platforms"><span class="since">Since 2026</span> · iPhone · Android · Website · Free</p>
+          <header class="title">
+            <h3>Naser Subhani <span class="native" lang="ckb" dir="rtl">ناسر سوبحانی</span></h3>
+            <p class="meta">Since 2026 · Free</p>
           </header>
-          <p class="summary">
-            A digital library of the writings of Mamosta Naser Subhani (1951–1990), the Kurdish
-            Islamic scholar from Paveh, gathered in one place to read.
+          <p>
+            A digital library of the writings of Mamosta Naser Subhani (1951–1990), the Kurdish Islamic scholar
+            from Paveh, gathered in one place to read.
           </p>
-          <ul class="highlights">
-            <li>Browse his books chapter by chapter, with footnotes and notes, and save the passages you like for later.</li>
-            <li>A complete Quran you can search, arranged by surah.</li>
-            <li>Change the text size and line spacing to read comfortably.</li>
-            <li>Works without internet, and updates itself when new writings are added.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id6795978341" target="_blank" rel="noopener">Get it for iPhone<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            <a class="btn" href="https://nasir-subhani.web.app" target="_blank" rel="noopener">Website &amp; Android<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id6795978341" target="_blank" rel="noopener">iPhone</a>
+            <a href="https://nasir-subhani.web.app" target="_blank" rel="noopener">Website &amp; Android</a>
+          </p>
+          <details>
+            <summary><span class="more">More</span><span class="less">Less</span></summary>
+            <ul>
+              <li>Browse his books chapter by chapter, with footnotes and notes, and save the passages you like for later.</li>
+              <li>A complete Quran you can search, arranged by surah.</li>
+              <li>Change the text size and line spacing to read comfortably.</li>
+              <li>Works without internet, and updates itself when new writings are added.</li>
+            </ul>
+          </details>
         </div>
       </article>
-    </section>
 
-    <section id="contact" class="contact wrap" aria-labelledby="contact-title">
-      <p class="eyebrow">Contact</p>
-      <h2 id="contact-title">Questions or feedback?</h2>
-      <p class="lead">Send me an email. I'd be glad to hear from you.</p>
-      <a class="btn btn-primary btn-large" href="mailto:alandkawaali@gmail.com">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="m2.5 4.5 5.5 4 5.5-4"/></svg>alandkawaali@gmail.com
-      </a>
+      <article class="project" id="fuel-cost-calculator">
+        <img class="icon" src="images/fuel-cost.svg" alt="" width="44" height="44" loading="lazy">
+        <div class="project-body">
+          <header class="title">
+            <h3>Fuel Cost Calculator <span class="native" lang="ckb" dir="rtl">ژمێرەری تێچووی بەنزین</span></h3>
+            <p class="meta">Since 2026 · Free</p>
+          </header>
+          <p>
+            Estimates the Super petrol cost of a journey in a BYD Qin Plus DM-i. Pick a start and a destination on
+            the map and it measures the road distance for you.
+          </p>
+          <p class="links">
+            <a href="fuel.html">Open the calculator</a>
+          </p>
+          <details>
+            <summary><span class="more">More</span><span class="less">Less</span></summary>
+            <ul>
+              <li>Change the fuel consumption to see what faster or more demanding driving would cost.</li>
+              <li>Starts from a real measurement: 5.26 litres over 227 km, for 10,000 IQD.</li>
+              <li>Counts petrol only. Electricity isn't included.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
     </section>
   </main>
 
-  <footer class="site-foot">
-    <div class="wrap site-foot-inner">
-      <p>© <span id="year">2026</span> Aland Kawa Ali</p>
-      <p><a href="#top">Back to top ↑</a></p>
-    </div>
+  <footer class="contact" id="contact">
+    <p>Questions or feedback? Send me an email: <a href="mailto:alandkawaali@gmail.com">alandkawaali@gmail.com</a></p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Light/dark toggle. With no saved choice the page follows the system setting.
-    (function () {
-      var root = document.documentElement;
-      var button = document.querySelector('.theme-toggle');
-      var media = window.matchMedia('(prefers-color-scheme: dark)');
-      function current() { return root.dataset.theme || (media.matches ? 'dark' : 'light'); }
-      button.addEventListener('click', function () {
-        var next = current() === 'dark' ? 'light' : 'dark';
-        root.dataset.theme = next;
-        try { localStorage.setItem('theme', next); } catch (e) {}
-      });
-    })();
-  </script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ckb" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ژمێرەری تێچووی بەنزین — ئەلەند کاوە عەلی</title>
+  <meta name="description" content="تێچووی بەنزینی سوپەر بۆ گەشتێک بە ئۆتۆمبێلی BYD Qin Plus DM-i بخەمڵێنە. ڕێگاکە لەسەر نەخشە هەڵبژێرە و خۆی درێژییەکەی دەپێوێت.">
+  <meta name="author" content="ئەلەند کاوە عەلی">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ckb_IQ">
+  <meta property="og:title" content="ژمێرەری تێچووی بەنزین">
+  <meta property="og:description" content="تێچووی بەنزینی سوپەر بۆ گەشتێک بە ئۆتۆمبێلی BYD Qin Plus DM-i بخەمڵێنە. ڕێگاکە لەسەر نەخشە هەڵبژێرە و خۆی درێژییەکەی دەپێوێت.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="alternate" hreflang="en" href="fuel">
+  <link rel="alternate" hreflang="ckb" href="fuel-ku">
+
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-head">
+    <a href="ku.html">ئەلەند کاوە عەلی</a>
+    <a href="fuel.html" lang="en" hreflang="en">English</a>
+  </header>
+
+  <main>
+    <h1>ژمێرەری تێچووی بەنزین</h1>
+    <p class="lead">تێچووی بەنزینی سوپەر بۆ گەشتێک بە ئۆتۆمبێلی <span lang="en" dir="ltr">BYD Qin Plus DM-i</span> بخەمڵێنە.</p>
+
+    <div id="map" class="map" dir="ltr" role="group" aria-label="نەخشە بۆ هەڵبژاردنی ڕێگا"></div>
+    <p class="map-status">
+      <span id="mapStatus" aria-live="polite"></span>
+      <button id="clearRoute" class="link-button" type="button" hidden>سڕینەوە</button>
+    </p>
+
+    <div class="field field-row">
+      <label for="distance">درێژیی ڕێگا</label>
+      <span><input id="distance" type="number" min="0" step="0.1" value="90" dir="ltr"> <span class="unit">کیلۆمەتر</span></span>
+    </div>
+
+    <div class="field">
+      <div class="field-row">
+        <label for="consumption">بەکارهێنانی بەنزین</label>
+        <span id="consumptionValue"></span>
+      </div>
+      <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317">
+      <p class="hint">زیادی بکە بۆ ئەوەی خێرا لێخوڕین و لێخوڕینی قورستر تاقی بکەیتەوە.</p>
+    </div>
+
+    <div class="field field-row">
+      <label for="price">نرخی بەنزینی سوپەر</label>
+      <span><input id="price" type="number" min="0" step="1" value="1900" dir="ltr"> <span class="unit">دینار/لیتر</span></span>
+    </div>
+
+    <dl class="result">
+      <div class="total" aria-live="polite"><dt>تێچووی خەمڵێنراوی بەنزین</dt><dd id="cost"></dd></div>
+      <div><dt>بەنزین</dt><dd id="litres"></dd></div>
+      <div><dt>بۆ هەر کیلۆمەترێک</dt><dd id="perKm"></dd></div>
+      <div><dt>بۆ هەر ١٠٠ کیلۆمەتر</dt><dd id="per100"></dd></div>
+    </dl>
+
+    <p class="note">
+      بەکارهێنانی سەرەتایی پێوانەکراوە: ٥٫٢٦ لیتر بۆ ٢٢٧ کیلۆمەتر، بە ١٠٬٠٠٠ دینار. تەنیا بەنزین دەژمێرێت و
+      تێچووی کارەبا لەخۆ ناگرێت.
+    </p>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="fuel.js"></script>
+</body>
+</html>

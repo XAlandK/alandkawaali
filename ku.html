@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ئەلەند کاوە عەلی — ئەپ و ماڵپەڕەکان</title>
-  <meta name="description" content="ئەپ و ماڵپەڕەکانی ئەلەند کاوە عەلی بە کوردی، عەرەبی و ئینگلیزی: قورئانی پیرۆز، پرسا، CêIT، ئینجیلی بەرنابا، زەویار، زریوە و ناسر سوبحانی.">
+  <meta name="description" content="ئەپ و ماڵپەڕەکانی ئەلەند کاوە عەلی بە کوردی، عەرەبی و ئینگلیزی: قورئانی پیرۆز، پرسا، CêIT، ئینجیلی بەرنابا، زەویار، زریوە، ناسر سوبحانی و ژمێرەری تێچووی بەنزین.">
   <meta name="author" content="ئەلەند کاوە عەلی">
 
   <meta property="og:type" content="website">
@@ -16,308 +16,243 @@
   <link rel="alternate" hreflang="en" href="./">
   <link rel="alternate" hreflang="ckb" href="ku">
 
-  <meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
-  <script>
-    // Apply a saved theme before first paint so the page doesn't flash.
-    try {
-      var saved = localStorage.getItem('theme');
-      if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
-    } catch (e) {}
-  </script>
 </head>
 <body>
-  <a class="skip" href="#projects">بڕۆ بۆ کارەکانم</a>
-
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="brand" href="#top" aria-label="ئەلەند کاوە عەلی، گەڕانەوە بۆ سەرەوە">
-        <span class="brand-mark" aria-hidden="true">A</span>
-        <span class="brand-name">ئەلەند کاوە عەلی</span>
-      </a>
-      <nav class="nav" aria-label="سەرەکی">
-        <a href="#projects">کارەکانم</a>
-        <a href="#contact">پەیوەندی</a>
-        <a class="lang-switch" href="./" lang="en" hreflang="en">English</a>
-        <button class="theme-toggle" type="button" aria-label="گۆڕین لە نێوان ڕووناک و تاریک">
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2 6 6M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
-        </button>
-      </nav>
-    </div>
+  <header class="site-head">
+    <h1>ئەلەند کاوە عەلی</h1>
+    <a href="./" lang="en" hreflang="en">English</a>
   </header>
 
-  <main id="top">
-    <section class="hero wrap">
-      <p class="eyebrow">ئەپ و ماڵپەڕەکانم</p>
-      <h1>ئەپ و ماڵپەڕ بۆ خوێندنەوە، فێربوون و تەماشاکردنی ئاسمان.</h1>
-      <p class="lead">
-        من ئەلەند کاوە عەلیم. ئەپ و ماڵپەڕی ئاسان بە کوردی، عەرەبی و ئینگلیزی دروست دەکەم:
-        بۆ خوێندنەوەی قورئانی پیرۆز و کتێبی تر، خۆئامادەکردن بۆ تاقیکردنەوە، فێربوونی تەکنەلۆجیا
-        و گەڕان بەناو ئەستێرەکاندا. زۆربەیان بێبەرانبەرن.
-      </p>
+  <main>
+    <p class="intro">
+      ئەپ و ماڵپەڕی ئاسان بە کوردی، عەرەبی و ئینگلیزی دروست دەکەم: بۆ خوێندنەوەی قورئانی پیرۆز و کتێبی تر،
+      خۆئامادەکردن بۆ تاقیکردنەوە، فێربوونی تەکنەلۆجیا و گەڕان بەناو ئەستێرەکاندا. زۆربەیان بێبەرانبەرن.
+    </p>
 
-      <ul class="facts" aria-label="بە کورتی">
-        <li><strong>٧</strong> پڕۆژە</li>
-        <li><strong>٦</strong> ئەپ لە ئەپ ستۆر</li>
-        <li><strong>٣</strong> زمان: کوردی، عەرەبی، ئینگلیزی</li>
-      </ul>
+    <section id="projects">
+      <h2 class="section-label">پڕۆژەکان</h2>
 
-      <nav class="shelf" aria-label="چوون بۆ پڕۆژەیەک">
-        <a href="#qurany-piroz"><img src="images/qurany-piroz.png" alt="" width="56" height="56"><span>قورئانی پیرۆز</span></a>
-        <a href="#pirsa"><img src="images/pirsa.png" alt="" width="56" height="56"><span>پرسا</span></a>
-        <a href="#ceit"><img class="tile-ceit" src="images/ceit.png" alt="" width="56" height="56"><span>CêIT</span></a>
-        <a href="#gospel-of-barnabas"><img src="images/gospel-of-barnabas.jpg" alt="" width="56" height="56"><span>ئینجیلی بەرنابا</span></a>
-        <a href="#zewyar"><img src="images/zewyar.jpg" alt="" width="56" height="56"><span>زەویار</span></a>
-        <a href="#zriwe"><img src="images/zriwe.jpg" alt="" width="56" height="56"><span>زریوە</span></a>
-        <a href="#naser-subhani"><img src="images/naser-subhani.jpg" alt="" width="56" height="56"><span>ناسر سوبحانی</span></a>
-      </nav>
-    </section>
-
-    <section id="projects" class="projects wrap" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section-title">کارەکانم</h2>
-
-      <!-- 01 · Qurany Piroz -->
       <article class="project" id="qurany-piroz">
-        <div class="project-side">
-          <span class="num">٠١</span>
-          <img class="app-icon" src="images/qurany-piroz.png" alt="ئایکۆنی ئەپی قورئانی پیرۆز" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/qurany-piroz.png" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>قورئانی پیرۆز <span class="subtitle">پەڕتووکی خودا</span></h3>
-            <p class="native" lang="en" dir="ltr">Qurany Piroz</p>
-            <p class="platforms"><span class="since">لە ساڵی ٢٠١٧ەوە</span> · ئایفۆن · ئەندرۆید · ماڵپەڕ · بێبەرانبەر</p>
+          <header class="title">
+            <h3>قورئانی پیرۆز <span class="native" lang="en" dir="ltr">Qurany Piroz</span></h3>
+            <p class="meta">لە ساڵی ٢٠١٧ەوە · بێبەرانبەر</p>
           </header>
-          <p class="summary">
-            ئەپێکی کوردییە بۆ خوێندنەوە و تێگەیشتنی قورئانی پیرۆز. بە ١٦ زمان بەردەستە
-            و ٤٧ تەفسیری زانایانی سەرانسەری جیهانی تێدایە.
+          <p>
+            پەڕتووکی خودا. ئەپێکی کوردییە بۆ خوێندنەوە و تێگەیشتنی قورئانی پیرۆز. بە ١٦ زمان بەردەستە و ٤٧ تەفسیری
+            زانایانی سەرانسەری جیهانی تێدایە.
           </p>
-          <ul class="highlights">
-            <li>هەموو قورئان لە هەر شوێنێک بخوێنەرەوە، تەنانەت بەبێ ئینتەرنێتیش.</li>
-            <li>بە یاریی پرسیار و وەڵام زانیاریی قورئانیت تاقی بکەرەوە، یان ڕاستەوخۆ لەگەڵ هاوڕێکانت پێشبڕکێ بکە.</li>
-            <li>هەر ئایەتێک وەک بەستەرێک بۆ هاوڕێکانت بنێرە کە ڕاستەوخۆ لە ناو ئەپەکەدا دەکرێتەوە.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id1240368293" target="_blank" rel="noopener">دابارکردن بۆ ئایفۆن<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            <a class="btn" href="https://www.qurany-piroz.com" target="_blank" rel="noopener">ماڵپەڕ و ئەندرۆید<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id1240368293" target="_blank" rel="noopener">ئایفۆن</a>
+            <a href="https://www.qurany-piroz.com" target="_blank" rel="noopener">ماڵپەڕ و ئەندرۆید</a>
+          </p>
+          <details>
+            <summary><span class="more">زیاتر</span><span class="less">کەمتر</span></summary>
+            <ul>
+              <li>هەموو قورئان لە هەر شوێنێک بخوێنەرەوە، تەنانەت بەبێ ئینتەرنێتیش.</li>
+              <li>بە یاریی پرسیار و وەڵام زانیاریی قورئانیت تاقی بکەرەوە، یان ڕاستەوخۆ لەگەڵ هاوڕێکانت پێشبڕکێ بکە.</li>
+              <li>هەر ئایەتێک وەک بەستەرێک بۆ هاوڕێکانت بنێرە کە ڕاستەوخۆ لە ناو ئەپەکەدا دەکرێتەوە.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 02 · Pirsa -->
       <article class="project" id="pirsa">
-        <div class="project-side">
-          <span class="num">٠٢</span>
-          <img class="app-icon" src="images/pirsa.png" alt="ئایکۆنی ئەپی پرسا" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/pirsa.png" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>پرسا <span class="subtitle">تێبینییەکانت بکە بە تاقیکردنەوە</span></h3>
-            <p class="native" lang="en" dir="ltr">Pirsa</p>
-            <p class="platforms"><span class="since">لە ساڵی ٢٠٢٥ەوە</span> · ئایفۆن · ئەندرۆید · بێبەرانبەر</p>
+          <header class="title">
+            <h3>پرسا <span class="native" lang="en" dir="ltr">Pirsa</span></h3>
+            <p class="meta">لە ساڵی ٢٠٢٥ەوە · بێبەرانبەر</p>
           </header>
-          <p class="summary">
-            کەرەستەکانی خوێندنت دەکات بە تاقیکردنەوەی کارلێکەر. فایلێکی PDF هەڵبژێرە یان دەقێک
-            بلکێنە، ژمارەی پرسیارەکان دیاری بکە و دەست بە وەڵامدانەوە بکە. ڕێگەیەکی ئاسانە بۆ
-            پێداچوونەوە پێش تاقیکردنەوە.
+          <p>
+            کەرەستەکانی خوێندنت دەکات بە تاقیکردنەوەی کارلێکەر. فایلێکی PDF هەڵبژێرە یان دەقێک بلکێنە، ژمارەی
+            پرسیارەکان دیاری بکە و دەست بە وەڵامدانەوە بکە. ڕێگەیەکی ئاسانە بۆ پێداچوونەوە پێش تاقیکردنەوە.
           </p>
-          <ul class="highlights">
-            <li>شەش جۆرە پرسیار: فرەهەڵبژاردن، ڕاست و هەڵە، پرسیاری کراوە، ڕیزکردن، پڕکردنەوەی بۆشایی و جووتکردن.</li>
-            <li>دەقی کوردی، عەرەبی و ئینگلیزی دەخوێنێتەوە، تەنانەت لە پەڕە سکانکراوەکانیشدا، هەروەها پرسیارەکان بە زمانی کەرەستەکە خۆی دەنووسێت.</li>
-            <li>پرسا لە زاراوەی ئەردەڵانیدا واتە «کەسێک کە بەدوای زانستدا دەگەڕێت».</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id6747336675" target="_blank" rel="noopener">دابارکردن بۆ ئایفۆن<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            <a class="btn" href="https://pirsa.web.app" target="_blank" rel="noopener">دابارکردن بۆ ئەندرۆید<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id6747336675" target="_blank" rel="noopener">ئایفۆن</a>
+            <a href="https://pirsa.web.app" target="_blank" rel="noopener">ئەندرۆید</a>
+          </p>
+          <details>
+            <summary><span class="more">زیاتر</span><span class="less">کەمتر</span></summary>
+            <ul>
+              <li>شەش جۆرە پرسیار: فرەهەڵبژاردن، ڕاست و هەڵە، پرسیاری کراوە، ڕیزکردن، پڕکردنەوەی بۆشایی و جووتکردن.</li>
+              <li>دەقی کوردی، عەرەبی و ئینگلیزی دەخوێنێتەوە، تەنانەت لە پەڕە سکانکراوەکانیشدا، هەروەها پرسیارەکان بە زمانی کەرەستەکە خۆی دەنووسێت.</li>
+              <li>پرسا لە زاراوەی ئەردەڵانیدا واتە «کەسێک کە بەدوای زانستدا دەگەڕێت».</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 03 · CêIT -->
       <article class="project" id="ceit">
-        <div class="project-side">
-          <span class="num">٠٣</span>
-          <img class="app-icon tile-ceit" src="images/ceit.png" alt="لۆگۆی CêIT" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon icon-ceit" src="images/ceit.png" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>CêIT <span class="subtitle">فێربوونی تەکنەلۆجیا بە کوردی</span></h3>
-            <p class="native">«جێ» + IT <span class="gloss">شوێنێک بۆ فێربوونی IT</span></p>
-            <p class="platforms"><span class="since">لە ساڵی ٢٠٢٦ەوە</span> · ماڵپەڕ · بێبەرانبەر</p>
+          <header class="title">
+            <h3>CêIT</h3>
+            <p class="meta">لە ساڵی ٢٠٢٦ەوە · بێبەرانبەر</p>
           </header>
-          <p class="summary">
-            ئینسایکلۆپیدیایەکی تەکنەلۆجیای بێبەرانبەرە بۆ خوێندکارانی کورد، بە ئینگلیزیی ئاسان
-            و کوردیی ناوەندی (سۆرانی). هەر وانەیەک دەتوانیت بە ئینگلیزی، بە کوردی یان هەردووکیان
-            لە تەنیشت یەکەوە بخوێنیتەوە.
+          <p>
+            ئینسایکلۆپیدیایەکی تەکنەلۆجیای بێبەرانبەرە بۆ خوێندکارانی کورد، بە ئینگلیزیی ئاسان و کوردیی ناوەندی
+            (سۆرانی). هەر وانەیەک دەتوانیت بە ئینگلیزی، بە کوردی یان هەردووکیان لە تەنیشت یەکەوە بخوێنیتەوە.
           </p>
-          <ul class="highlights">
-            <li>کرتە لە هەر زاراوەیەکی تەکنیکی بکە بۆ ئەوەی واتاکەی بە کوردی و ئینگلیزی لەگەڵ نموونەیەک ببینیت.</li>
-            <li>بە کردار فێر بە: تۆڕێکی کۆمپیوتەر دروست بکە، ڕۆبۆتێک پرۆگرام بکە و ببینە کۆمپیوتەر چۆن ٢ + ٢ کۆ دەکاتەوە، هەمووی لە ناو پەڕەکەدا.</li>
-            <li>وانەی کورت لەگەڵ پرسیاری خێرا بۆ تاقیکردنەوەی خۆت و ڤیدیۆی هەڵبژێردراو.</li>
-            <li>دوای کردنەوەی، بەبێ ئینتەرنێتیش کار دەکات. بێ خۆتۆمارکردن و بێ ڕیکلام.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://ceit.vercel.app" target="_blank" rel="noopener">سەردانی ماڵپەڕ بکە<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://ceit.vercel.app" target="_blank" rel="noopener">ماڵپەڕ</a>
+          </p>
+          <details>
+            <summary><span class="more">زیاتر</span><span class="less">کەمتر</span></summary>
+            <ul>
+              <li>«جێ» + IT: شوێنێک بۆ فێربوونی IT.</li>
+              <li>کرتە لە هەر زاراوەیەکی تەکنیکی بکە بۆ ئەوەی واتاکەی بە کوردی و ئینگلیزی لەگەڵ نموونەیەک ببینیت.</li>
+              <li>بە کردار فێر بە: تۆڕێکی کۆمپیوتەر دروست بکە، ڕۆبۆتێک پرۆگرام بکە و ببینە کۆمپیوتەر چۆن ٢ + ٢ کۆ دەکاتەوە، هەمووی لە ناو پەڕەکەدا.</li>
+              <li>وانەی کورت لەگەڵ پرسیاری خێرا بۆ تاقیکردنەوەی خۆت و ڤیدیۆی هەڵبژێردراو.</li>
+              <li>دوای کردنەوەی، بەبێ ئینتەرنێتیش کار دەکات. بێ خۆتۆمارکردن و بێ ڕیکلام.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 04 · Gospel of Barnabas -->
       <article class="project" id="gospel-of-barnabas">
-        <div class="project-side">
-          <span class="num">٠٤</span>
-          <img class="app-icon" src="images/gospel-of-barnabas.jpg" alt="ئایکۆنی ئەپی ئینجیلی بەرنابا" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/gospel-of-barnabas.jpg" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>ئینجیلی بەرنابا</h3>
-            <p class="native"><span lang="en" dir="ltr">Gospel of Barnabas</span> <span class="sep" aria-hidden="true">·</span> <span lang="ar" dir="rtl">إنجيل برنابا</span></p>
-            <p class="platforms"><span class="since">لە ساڵی ٢٠١٧ەوە</span> · ئایفۆن · ئایپاد · بێبەرانبەر</p>
+          <header class="title">
+            <h3>ئینجیلی بەرنابا <span class="native" lang="en" dir="ltr">Gospel of Barnabas</span></h3>
+            <p class="meta">لە ساڵی ٢٠١٧ەوە · بێبەرانبەر</p>
           </header>
-          <p class="summary">
-            ئەپێکە بۆ خوێندنەوەی ئینجیلی بەرنابا بە ئینگلیزی، عەرەبی و کوردی. هەر کاتێک ویستت
-            زمانەکە بگۆڕە، هەموو ئەپەکە لەگەڵیدا دەگۆڕێت.
+          <p>
+            ئەپێکە بۆ خوێندنەوەی ئینجیلی بەرنابا بە ئینگلیزی، عەرەبی و کوردی. هەر کاتێک ویستت زمانەکە بگۆڕە، هەموو
+            ئەپەکە لەگەڵیدا دەگۆڕێت.
           </p>
-          <ul class="highlights">
-            <li>هەر ٢٢٢ بەشەکە، لەگەڵ پێشەکیی بەرنابا، لێکدانەوەیەکی ئیسلامی بۆ ٤٤ بەش و پێنج وتار لەبارەی کتێبەکەوە.</li>
-            <li>وەرگێڕانێکی کوردیی نوێ و تەواو.</li>
-            <li>قەبارەی نووسین گەورە و بچووک بکە، بگەڕێ، بەشە دڵخوازەکانت پاشەکەوت بکە و هاوبەشیان بکە.</li>
-            <li>بەبێ ئینتەرنێت کار دەکات. بێ خۆتۆمارکردن و بێ ڕیکلام.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id1198747871" target="_blank" rel="noopener">دابارکردن بۆ ئایفۆن و ئایپاد<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id1198747871" target="_blank" rel="noopener">ئایفۆن و ئایپاد</a>
+          </p>
+          <details>
+            <summary><span class="more">زیاتر</span><span class="less">کەمتر</span></summary>
+            <ul>
+              <li>هەر ٢٢٢ بەشەکە، لەگەڵ پێشەکیی بەرنابا، لێکدانەوەیەکی ئیسلامی بۆ ٤٤ بەش و پێنج وتار لەبارەی کتێبەکەوە.</li>
+              <li>وەرگێڕانێکی کوردیی نوێ و تەواو.</li>
+              <li>قەبارەی نووسین گەورە و بچووک بکە، بگەڕێ، بەشە دڵخوازەکانت پاشەکەوت بکە و هاوبەشیان بکە.</li>
+              <li>بەبێ ئینتەرنێت کار دەکات. بێ خۆتۆمارکردن و بێ ڕیکلام.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 05 · Zewyar -->
       <article class="project" id="zewyar">
-        <div class="project-side">
-          <span class="num">٠٥</span>
-          <img class="app-icon" src="images/zewyar.jpg" alt="ئایکۆنی ئەپی زەویار" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/zewyar.jpg" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>زەویار <span class="subtitle">چاودێریی وێستگە ئاسمانییەکان</span></h3>
-            <p class="native" lang="en" dir="ltr">Zewyar</p>
-            <p class="platforms"><span class="since">لە ساڵی ٢٠٢٦ەوە</span> · ئایفۆن</p>
+          <header class="title">
+            <h3>زەویار <span class="native" lang="en" dir="ltr">Zewyar</span></h3>
+            <p class="meta">لە ساڵی ٢٠٢٦ەوە</p>
           </header>
-          <p class="summary">
-            ببینە وێستگەی ئاسمانیی نێواننەتەوەیی و وێستگەی تیانگۆنگی چین ئێستا لە کوێن، ڕاستەوخۆ
-            لەسەر نەخشە. ناوەکەی لە «زەوی» و «یار» پێکهاتووە: وێستگەگەلێک کە وەک یارێکی وەفادار
-            بە دەوری زەویدا دەسوڕێنەوە.
+          <p>
+            ببینە وێستگەی ئاسمانیی نێواننەتەوەیی و وێستگەی تیانگۆنگی چین ئێستا لە کوێن، ڕاستەوخۆ لەسەر نەخشە.
+            ناوەکەی لە «زەوی» و «یار» پێکهاتووە: وێستگەگەلێک کە وەک یارێکی وەفادار بە دەوری زەویدا دەسوڕێنەوە.
           </p>
-          <ul class="highlights">
-            <li>جووڵەی وێستگەکان لەسەر نەخشە ببینە، خێرایی و بەرزییان بزانە و ببینە لە کوێی زەوی ڕۆژە و لە کوێ شەوە.</li>
-            <li>پێش ئەوەی وێستگەیەک بەسەر ئاسمانی شارەکەتدا تێپەڕێت ئاگادارت دەکاتەوە، بۆ ئەوەی بچیتە دەرەوە و بە چاوی خۆت بیبینیت.</li>
-            <li>زانیاری لەبارەی کەشتیوانە موسڵمانەکان و چۆنیەتیی دیاریکردنی قیبلە و کاتەکانی پەرستش لە بۆشایی ئاسماندا.</li>
-            <li>هەمووی بە کوردی.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id6794162104" target="_blank" rel="noopener">دابارکردن بۆ ئایفۆن<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id6794162104" target="_blank" rel="noopener">ئایفۆن</a>
+          </p>
+          <details>
+            <summary><span class="more">زیاتر</span><span class="less">کەمتر</span></summary>
+            <ul>
+              <li>جووڵەی وێستگەکان لەسەر نەخشە ببینە، خێرایی و بەرزییان بزانە و ببینە لە کوێی زەوی ڕۆژە و لە کوێ شەوە.</li>
+              <li>پێش ئەوەی وێستگەیەک بەسەر ئاسمانی شارەکەتدا تێپەڕێت ئاگادارت دەکاتەوە، بۆ ئەوەی بچیتە دەرەوە و بە چاوی خۆت بیبینیت.</li>
+              <li>زانیاری لەبارەی کەشتیوانە موسڵمانەکان و چۆنیەتیی دیاریکردنی قیبلە و کاتەکانی پەرستش لە بۆشایی ئاسماندا.</li>
+              <li>هەمووی بە کوردی.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 06 · Zriwe -->
       <article class="project" id="zriwe">
-        <div class="project-side">
-          <span class="num">٠٦</span>
-          <img class="app-icon" src="images/zriwe.jpg" alt="ئایکۆنی ئەپی زریوە" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/zriwe.jpg" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>زریوە <span class="subtitle">نەخشەی ئاسمان</span></h3>
-            <p class="native" lang="en" dir="ltr">Zriwe</p>
-            <p class="platforms"><span class="since">لە ساڵی ٢٠٢٦ەوە</span> · ئایفۆن · بێبەرانبەر</p>
+          <header class="title">
+            <h3>زریوە <span class="native" lang="en" dir="ltr">Zriwe</span></h3>
+            <p class="meta">لە ساڵی ٢٠٢٦ەوە · بێبەرانبەر</p>
           </header>
-          <p class="summary">
-            مۆبایلەکەت بەرەو ئاسمانی شەو ڕابگرە و زریوە پیشانت دەدات چی دەبینیت: ناوی ئەستێرەکان،
-            شێوەی کۆستێرەکان، گەڕۆکەکان، خۆر و مانگ.
+          <p>
+            مۆبایلەکەت بەرەو ئاسمانی شەو ڕابگرە و زریوە پیشانت دەدات چی دەبینیت: ناوی ئەستێرەکان، شێوەی کۆستێرەکان،
+            گەڕۆکەکان، خۆر و مانگ.
           </p>
-          <ul class="highlights">
-            <li>زیاتر لە ٣٬٠٠٠ ئەستێرە و نزیکەی ١٠٠ کۆستێر، لەگەڵ گەلەستێرە و کۆمەڵە ئەستێرەکان.</li>
-            <li>ئەو ڕێگەیە ببینە کە خۆر و مانگ ئەمڕۆ بە ئاسماندا دەیبڕن.</li>
-            <li>تەنیا ئاڕاستەی بکە و سەیر بکە: نەخشەکە لەگەڵ جووڵەی مۆبایلەکەت دەسوڕێتەوە.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id6792790152" target="_blank" rel="noopener">دابارکردن بۆ ئایفۆن<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            <a class="btn" href="https://zriwe-asman.web.app" target="_blank" rel="noopener">سەردانی ماڵپەڕ بکە<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id6792790152" target="_blank" rel="noopener">ئایفۆن</a>
+            <a href="https://zriwe-asman.web.app" target="_blank" rel="noopener">ماڵپەڕ</a>
+          </p>
+          <details>
+            <summary><span class="more">زیاتر</span><span class="less">کەمتر</span></summary>
+            <ul>
+              <li>زیاتر لە ٣٬٠٠٠ ئەستێرە و نزیکەی ١٠٠ کۆستێر، لەگەڵ گەلەستێرە و کۆمەڵە ئەستێرەکان.</li>
+              <li>ئەو ڕێگەیە ببینە کە خۆر و مانگ ئەمڕۆ بە ئاسماندا دەیبڕن.</li>
+              <li>تەنیا ئاڕاستەی بکە و سەیر بکە: نەخشەکە لەگەڵ جووڵەی مۆبایلەکەت دەسوڕێتەوە.</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <!-- 07 · Naser Subhani -->
       <article class="project" id="naser-subhani">
-        <div class="project-side">
-          <span class="num">٠٧</span>
-          <img class="app-icon" src="images/naser-subhani.jpg" alt="ئایکۆنی ئەپی ناسر سوبحانی" width="88" height="88" loading="lazy">
-        </div>
+        <img class="icon" src="images/naser-subhani.jpg" alt="" width="44" height="44" loading="lazy">
         <div class="project-body">
-          <header class="project-head">
-            <h3>ناسر سوبحانی <span class="subtitle">کتێبخانەی دیجیتاڵی</span></h3>
-            <p class="native" lang="en" dir="ltr">Naser Subhani</p>
-            <p class="platforms"><span class="since">لە ساڵی ٢٠٢٦ەوە</span> · ئایفۆن · ئەندرۆید · ماڵپەڕ · بێبەرانبەر</p>
+          <header class="title">
+            <h3>ناسر سوبحانی <span class="native" lang="en" dir="ltr">Naser Subhani</span></h3>
+            <p class="meta">لە ساڵی ٢٠٢٦ەوە · بێبەرانبەر</p>
           </header>
-          <p class="summary">
-            کتێبخانەیەکی دیجیتاڵییە بۆ بەرهەمە نووسراوەکانی مامۆستا ناسر سوبحانی (١٩٥١–١٩٩٠)،
-            زانای ئیسلامیی کورد لە پاوە، کە هەمووی لە یەک شوێندا بۆ خوێندنەوە کۆ کراوەتەوە.
+          <p>
+            کتێبخانەیەکی دیجیتاڵییە بۆ بەرهەمە نووسراوەکانی مامۆستا ناسر سوبحانی (١٩٥١–١٩٩٠)، زانای ئیسلامیی کورد
+            لە پاوە، کە هەمووی لە یەک شوێندا بۆ خوێندنەوە کۆ کراوەتەوە.
           </p>
-          <ul class="highlights">
-            <li>بەنێو کتێبەکان و بەشەکانیاندا بگەڕێ، لەگەڵ پەراوێز و تێبینییەکان، هەروەها بڕگە دڵخوازەکانت بۆ دواتر پاشەکەوت بکە.</li>
-            <li>قورئانێکی تەواو کە بەپێی سوورەتەکان دەتوانیت تێیدا بگەڕێیت.</li>
-            <li>قەبارەی نووسین و بۆشایی نێوان دێڕەکان بە دڵی خۆت ڕێک بخە.</li>
-            <li>بەبێ ئینتەرنێت کار دەکات و کاتێک بەرهەمی نوێ زیاد دەکرێت خۆی نوێ دەبێتەوە.</li>
-          </ul>
-          <div class="links">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/id6795978341" target="_blank" rel="noopener">دابارکردن بۆ ئایفۆن<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-            <a class="btn" href="https://nasir-subhani.web.app" target="_blank" rel="noopener">ماڵپەڕ و ئەندرۆید<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-          </div>
+          <p class="links">
+            <a href="https://apps.apple.com/app/id6795978341" target="_blank" rel="noopener">ئایفۆن</a>
+            <a href="https://nasir-subhani.web.app" target="_blank" rel="noopener">ماڵپەڕ و ئەندرۆید</a>
+          </p>
+          <details>
+            <summary><span class="more">زیاتر</span><span class="less">کەمتر</span></summary>
+            <ul>
+              <li>بەنێو کتێبەکان و بەشەکانیاندا بگەڕێ، لەگەڵ پەراوێز و تێبینییەکان، هەروەها بڕگە دڵخوازەکانت بۆ دواتر پاشەکەوت بکە.</li>
+              <li>قورئانێکی تەواو کە بەپێی سوورەتەکان دەتوانیت تێیدا بگەڕێیت.</li>
+              <li>قەبارەی نووسین و بۆشایی نێوان دێڕەکان بە دڵی خۆت ڕێک بخە.</li>
+              <li>بەبێ ئینتەرنێت کار دەکات و کاتێک بەرهەمی نوێ زیاد دەکرێت خۆی نوێ دەبێتەوە.</li>
+            </ul>
+          </details>
         </div>
       </article>
-    </section>
 
-    <section id="contact" class="contact wrap" aria-labelledby="contact-title">
-      <p class="eyebrow">پەیوەندی</p>
-      <h2 id="contact-title">پرسیار یان ڕاوبۆچوونت هەیە؟</h2>
-      <p class="lead">ئیمەیڵێکم بۆ بنێرە. خۆشحاڵ دەبم نامەکەت بخوێنمەوە.</p>
-      <a class="btn btn-primary btn-large" href="mailto:alandkawaali@gmail.com">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3.5" width="12" height="9" rx="1.5"/><path d="m2.5 4.5 5.5 4 5.5-4"/></svg><span lang="en" dir="ltr">alandkawaali@gmail.com</span>
-      </a>
+      <article class="project" id="fuel-cost-calculator">
+        <img class="icon" src="images/fuel-cost.svg" alt="" width="44" height="44" loading="lazy">
+        <div class="project-body">
+          <header class="title">
+            <h3>ژمێرەری تێچووی بەنزین <span class="native" lang="en" dir="ltr">Fuel Cost Calculator</span></h3>
+            <p class="meta">لە ساڵی ٢٠٢٦ەوە · بێبەرانبەر</p>
+          </header>
+          <p>
+            تێچووی بەنزینی سوپەر بۆ گەشتێک بە ئۆتۆمبێلی <span lang="en" dir="ltr">BYD Qin Plus DM-i</span> دەخەمڵێنێت.
+            خاڵی دەستپێک و شوێنی مەبەست لەسەر نەخشە دیاری بکە و خۆی درێژیی ڕێگاکە دەپێوێت.
+          </p>
+          <p class="links">
+            <a href="fuel-ku.html">ژمێرەرەکە بکەرەوە</a>
+          </p>
+          <details>
+            <summary><span class="more">زیاتر</span><span class="less">کەمتر</span></summary>
+            <ul>
+              <li>بەکارهێنانی بەنزین بگۆڕە بۆ ئەوەی ببینیت لێخوڕینی خێراتر یان قورستر چەندت تێدەچێت.</li>
+              <li>لە پێوانەیەکی ڕاستەقینەوە دەست پێ دەکات: ٥٫٢٦ لیتر بۆ ٢٢٧ کیلۆمەتر، بە ١٠٬٠٠٠ دینار.</li>
+              <li>تەنیا بەنزین دەژمێرێت و تێچووی کارەبا لەخۆ ناگرێت.</li>
+            </ul>
+          </details>
+        </div>
+      </article>
     </section>
   </main>
 
-  <footer class="site-foot">
-    <div class="wrap site-foot-inner">
-      <p>© <span id="year">٢٠٢٦</span> ئەلەند کاوە عەلی</p>
-      <p><a href="#top">گەڕانەوە بۆ سەرەوە ↑</a></p>
-    </div>
+  <footer class="contact" id="contact">
+    <p>پرسیار یان ڕاوبۆچوونت هەیە؟ ئیمەیڵێکم بۆ بنێرە: <a href="mailto:alandkawaali@gmail.com" lang="en" dir="ltr">alandkawaali@gmail.com</a></p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = String(new Date().getFullYear())
-      .replace(/\d/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'[d]; });
-
-    // Light/dark toggle. With no saved choice the page follows the system setting.
-    (function () {
-      var root = document.documentElement;
-      var button = document.querySelector('.theme-toggle');
-      var media = window.matchMedia('(prefers-color-scheme: dark)');
-      function current() { return root.dataset.theme || (media.matches ? 'dark' : 'light'); }
-      button.addEventListener('click', function () {
-        var next = current() === 'dark' ? 'light' : 'dark';
-        root.dataset.theme = next;
-        try { localStorage.setItem('theme', next); } catch (e) {}
-      });
-    })();
-  </script>
 </body>
 </html>
