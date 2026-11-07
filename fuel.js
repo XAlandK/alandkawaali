@@ -52,7 +52,9 @@
 
   // Numbers are built in en-US, then written in Kurdish digits on the Kurdish page. Thousands
   // get the Kurdish comma (٬), but decimals keep a plain point: the Kurdish decimal mark (٫)
-  // looks like a comma and was read as one.
+  // looks like a comma and was read as one. Even a point after a whole number reads as
+  // thousands ("٣٨.٨٤" as 38 thousand), so kilometres and dinars are shown as whole numbers and
+  // only litres keep decimals.
   const localise = value => kurdish
     ? value.replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]).replace(/,/g, '٬')
     : value;
@@ -74,9 +76,10 @@
 
   // The sliders work in whichever unit is picked. Litres per 100 km and km per litre are each
   // 100 divided by the other, so the km per litre range is the litres range turned over.
-  const SLIDER_RANGE = {
-    l100: { min: 1, max: 10 },
-    kml: { min: 10, max: 100 }
+  // Km per litre moves in whole kilometres, so the figure shown is the one the cost uses.
+  const UNITS = {
+    l100: { min: 1, max: 10, step: 0.001, places: 2 },
+    kml: { min: 10, max: 100, step: 1, places: 0 }
   };
   // A range starts this far either side of the exact figure.
   const RANGE_SPREAD = 0.1;
@@ -88,15 +91,16 @@
   const toLitresPer100Km = value => unit === 'l100' ? value : (value > 0 ? 100 / value : 0);
 
   function setUnit(next) {
-    if (!SLIDER_RANGE[next] || next === unit) return;
+    if (!UNITS[next] || next === unit) return;
     const [exact, low, high] = sliders.map(sliderValue);
     unit = next;
     sliders.forEach(input => {
-      input.min = SLIDER_RANGE[unit].min;
-      input.max = SLIDER_RANGE[unit].max;
+      input.step = UNITS[unit].step;
+      input.min = UNITS[unit].min;
+      input.max = UNITS[unit].max;
     });
     // Turning the unit over also turns the range over: the low end becomes the high end.
-    const flip = value => value > 0 ? 100 / value : SLIDER_RANGE[unit].min;
+    const flip = value => value > 0 ? 100 / value : UNITS[unit].min;
     exactInput.value = flip(exact);
     lowInput.value = flip(high);
     highInput.value = flip(low);
@@ -136,7 +140,7 @@
     const least = Math.min(...perHundred);
     const most = Math.max(...perHundred);
 
-    const describe = input => text.consumption[unit](decimals(sliderValue(input), 2));
+    const describe = input => text.consumption[unit](decimals(sliderValue(input), UNITS[unit].places));
     show('consumptionValue', mode === 'exact' ? describe(exactInput) : '');
     show('consumptionLowValue', describe(lowInput));
     show('consumptionHighValue', describe(highInput));
@@ -144,7 +148,7 @@
 
     show('cost', figure(distance * least * price / 100, distance * most * price / 100, 0, text.money));
     show('litres', figure(distance * least / 100, distance * most / 100, 2, text.litres));
-    show('perKm', figure(least * price / 100, most * price / 100, 2, text.money));
+    show('perKm', figure(least * price / 100, most * price / 100, 0, text.money));
     show('per100', figure(least * price, most * price, 0, text.money));
   }
 
@@ -305,9 +309,9 @@
       if (!map.getBounds().contains(bounds)) map.fitBounds(bounds, { padding: [32, 32] });
 
       const km = route.distance / 1000;
-      distanceInput.value = km.toFixed(1);
+      distanceInput.value = Math.round(km);
       calculate();
-      status.textContent = text.found(decimals(km, 1));
+      status.textContent = text.found(decimals(km, 0));
     } catch (error) {
       if (error.name === 'AbortError') return;
       removeRouteLine();
