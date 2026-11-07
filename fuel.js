@@ -14,7 +14,16 @@
     noMap: 'نەخشەکە نەکرایەوە. درێژیی ڕێگا خۆت لە خوارەوە بنووسە.',
     start: 'دەستپێک',
     end: 'مەبەست',
-    consumption: n => `${n} لیتر بۆ هەر ١٠٠ کیلۆمەتر`,
+    consumption: {
+      l100: n => `${n} لیتر بۆ هەر ١٠٠ کیلۆمەتر`,
+      kml: n => `${n} کیلۆمەتر بۆ هەر لیترێک`
+    },
+    hint: {
+      l100: 'زیادی بکە بۆ ئەوەی خێرا لێخوڕین و لێخوڕینی قورستر تاقی بکەیتەوە.',
+      kml: 'کەمی بکەرەوە بۆ ئەوەی خێرا لێخوڕین و لێخوڕینی قورستر تاقی بکەیتەوە.',
+      range: 'هەردوو سنوورەکە دابنێ؛ تێچووەکە وەک خەمڵاندنێکی نزیک پیشان دەدرێت.'
+    },
+    range: (low, high) => `${low} تا ${high}`,
     litres: n => `${n} لیتر`,
     money: n => `${n} دینار`
   } : {
@@ -27,7 +36,16 @@
     noMap: "The map couldn't load. Type the distance below.",
     start: 'Start',
     end: 'Destination',
-    consumption: n => `${n} L/100 km`,
+    consumption: {
+      l100: n => `${n} L/100 km`,
+      kml: n => `${n} km/L`
+    },
+    hint: {
+      l100: 'Raise it to simulate faster acceleration, higher speeds or more demanding driving.',
+      kml: 'Lower it to simulate faster acceleration, higher speeds or more demanding driving.',
+      range: 'Set both ends; the cost is shown as a rough estimate.'
+    },
+    range: (low, high) => `${low}–${high}`,
     litres: n => `${n} L`,
     money: n => `${n} IQD`
   };
@@ -43,26 +61,119 @@
   // ---------- Calculator ----------
 
   const distanceInput = document.getElementById('distance');
-  const consumptionInput = document.getElementById('consumption');
   const priceInput = document.getElementById('price');
+  const exactInput = document.getElementById('consumption');
+  const lowInput = document.getElementById('consumptionLow');
+  const highInput = document.getElementById('consumptionHigh');
+  const sliders = [exactInput, lowInput, highInput];
+  const unitInputs = document.querySelectorAll('input[name="consumptionUnit"]');
+  const modeInputs = document.querySelectorAll('input[name="consumptionMode"]');
   const show = (id, value) => { document.getElementById(id).textContent = value; };
+
+  // The sliders work in whichever unit is picked. Litres per 100 km and km per litre are each
+  // 100 divided by the other, so the km per litre range is the litres range turned over.
+  const SLIDER_RANGE = {
+    l100: { min: 1, max: 10 },
+    kml: { min: 10, max: 100 }
+  };
+  // A range starts this far either side of the exact figure.
+  const RANGE_SPREAD = 0.1;
+  const STORAGE_KEYS = { unit: 'fuelConsumptionUnit', mode: 'fuelConsumptionMode' };
+  let unit = 'l100';
+  let mode = 'exact';
+
+  const sliderValue = input => Math.max(0, Number(input.value) || 0);
+  const toLitresPer100Km = value => unit === 'l100' ? value : (value > 0 ? 100 / value : 0);
+
+  function setUnit(next) {
+    if (!SLIDER_RANGE[next] || next === unit) return;
+    const [exact, low, high] = sliders.map(sliderValue);
+    unit = next;
+    sliders.forEach(input => {
+      input.min = SLIDER_RANGE[unit].min;
+      input.max = SLIDER_RANGE[unit].max;
+    });
+    // Turning the unit over also turns the range over: the low end becomes the high end.
+    const flip = value => value > 0 ? 100 / value : SLIDER_RANGE[unit].min;
+    exactInput.value = flip(exact);
+    lowInput.value = flip(high);
+    highInput.value = flip(low);
+    unitInputs.forEach(input => { input.checked = input.value === unit; });
+    calculate();
+  }
+
+  function setMode(next) {
+    if (!['exact', 'range'].includes(next) || next === mode) return;
+    mode = next;
+    if (mode === 'range') {
+      // A range opens around the exact figure, and going back to exact takes its middle.
+      const exact = sliderValue(exactInput);
+      lowInput.value = exact * (1 - RANGE_SPREAD);
+      highInput.value = exact * (1 + RANGE_SPREAD);
+    } else {
+      exactInput.value = (sliderValue(lowInput) + sliderValue(highInput)) / 2;
+    }
+    document.getElementById('consumptionExact').hidden = mode !== 'exact';
+    document.getElementById('consumptionRange').hidden = mode !== 'range';
+    modeInputs.forEach(input => { input.checked = input.value === mode; });
+    calculate();
+  }
+
+  // One figure, or "low to high" when the two ends still differ once rounded.
+  function figure(low, high, places, wrap) {
+    const a = decimals(low, places);
+    const b = decimals(high, places);
+    return wrap(a === b ? a : text.range(a, b));
+  }
 
   function calculate() {
     const distance = Math.max(0, Number(distanceInput.value) || 0);
-    const consumption = Math.max(0, Number(consumptionInput.value) || 0);
     const price = Math.max(0, Number(priceInput.value) || 0);
-    const litres = distance * consumption / 100;
+    const chosen = mode === 'exact' ? [exactInput] : [lowInput, highInput];
+    const perHundred = chosen.map(input => toLitresPer100Km(sliderValue(input)));
+    const least = Math.min(...perHundred);
+    const most = Math.max(...perHundred);
 
-    show('consumptionValue', text.consumption(decimals(consumption, 2)));
-    show('cost', text.money(decimals(litres * price, 0)));
-    show('litres', text.litres(decimals(litres, 2)));
-    show('perKm', text.money(decimals(consumption * price / 100, 2)));
-    show('per100', text.money(decimals(consumption * price, 0)));
+    const describe = input => text.consumption[unit](decimals(sliderValue(input), 2));
+    show('consumptionValue', mode === 'exact' ? describe(exactInput) : '');
+    show('consumptionLowValue', describe(lowInput));
+    show('consumptionHighValue', describe(highInput));
+    show('consumptionHint', mode === 'range' ? text.hint.range : text.hint[unit]);
+
+    show('cost', figure(distance * least * price / 100, distance * most * price / 100, 0, text.money));
+    show('litres', figure(distance * least / 100, distance * most / 100, 2, text.litres));
+    show('perKm', figure(least * price / 100, most * price / 100, 2, text.money));
+    show('per100', figure(least * price, most * price, 0, text.money));
   }
 
-  [distanceInput, consumptionInput, priceInput].forEach(input =>
+  // "From" never passes "to": dragging one past the other pushes the other along.
+  lowInput.addEventListener('input', () => {
+    if (sliderValue(lowInput) > sliderValue(highInput)) highInput.value = lowInput.value;
+  });
+  highInput.addEventListener('input', () => {
+    if (sliderValue(highInput) < sliderValue(lowInput)) lowInput.value = highInput.value;
+  });
+  [distanceInput, priceInput, ...sliders].forEach(input =>
     input.addEventListener('input', calculate)
   );
+
+  // The chosen unit and mode are remembered in this browser, so they are already picked next time.
+  function remember(key, value) {
+    try { localStorage.setItem(key, value); } catch (error) { /* not remembered; still works */ }
+  }
+  function recall(key) {
+    try { return localStorage.getItem(key); } catch (error) { return null; }
+  }
+  unitInputs.forEach(input => input.addEventListener('change', () => {
+    setUnit(input.value);
+    remember(STORAGE_KEYS.unit, unit);
+  }));
+  modeInputs.forEach(input => input.addEventListener('change', () => {
+    setMode(input.value);
+    remember(STORAGE_KEYS.mode, mode);
+  }));
+  setUnit(recall(STORAGE_KEYS.unit));
+  setMode(recall(STORAGE_KEYS.mode));
   calculate();
 
   // ---------- Map ----------
@@ -132,6 +243,8 @@
     if (pendingRequest) pendingRequest.abort();
     [startPin, endPin, routeLine].forEach(layer => { if (layer) layer.remove(); });
     startPin = endPin = routeLine = null;
+    distanceInput.value = 0;
+    calculate();
     status.textContent = text.pickStart;
     clearButton.hidden = true;
   });

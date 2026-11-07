@@ -274,19 +274,48 @@ input[type="range"] {
   font-size: 0.875em;
 }
 
+/* The unit and exact/range radio buttons above the consumption slider. */
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-top: 8px;
+  font-size: 0.875em;
+}
+.choice label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.choice input {
+  margin: 0;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+.consumption-range .field-row { margin-top: 12px; }
+
 .result {
   margin: 32px 0 0;
   padding-top: 16px;
   border-top: 1px solid var(--line);
 }
+/* A range makes the figures longer; when one no longer fits beside its label, it moves
+   onto its own line instead of breaking in the middle. */
 .result div {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: 16px;
+  gap: 0 16px;
 }
 .result dt { color: var(--muted); }
-.result dd { margin: 0; }
+.result dd {
+  margin: 0;
+  margin-inline-start: auto;
+  white-space: nowrap;
+}
 .result .total { margin-bottom: 8px; }
 .result .total dt { color: inherit; }
 .result .total dd { font-size: 1.5em; font-weight: 600; }
@@ -378,6 +407,7 @@ input[type="range"] {
     margin-block: -10px;
   }
   input[type="range"] { height: 32px; }
+  .choice label { min-height: 36px; }
 }
 
 /* Tablets: the same single column, with more room around it */

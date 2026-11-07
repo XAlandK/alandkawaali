@@ -63,8 +63,30 @@
           <label for="consumption">بەکارهێنانی بەنزین</label>
           <span id="consumptionValue"></span>
         </div>
-        <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317">
-        <p class="hint">زیادی بکە بۆ ئەوەی خێرا لێخوڕین و لێخوڕینی قورستر تاقی بکەیتەوە.</p>
+        <div class="choice" role="radiogroup" aria-label="یەکەی بەکارهێنانی بەنزین">
+          <label><input type="radio" name="consumptionUnit" value="l100" autocomplete="off" checked> لیتر بۆ هەر ١٠٠ کیلۆمەتر</label>
+          <label><input type="radio" name="consumptionUnit" value="kml" autocomplete="off"> کیلۆمەتر بۆ هەر لیترێک</label>
+        </div>
+        <div class="choice" role="radiogroup" aria-label="دەقاودەق یان لەنێوان">
+          <label><input type="radio" name="consumptionMode" value="exact" autocomplete="off" checked> دەقاودەق</label>
+          <label><input type="radio" name="consumptionMode" value="range" autocomplete="off"> لەنێوان</label>
+        </div>
+        <div id="consumptionExact">
+          <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317" autocomplete="off">
+        </div>
+        <div id="consumptionRange" class="consumption-range" hidden>
+          <div class="field-row">
+            <label for="consumptionLow">لە</label>
+            <span id="consumptionLowValue"></span>
+          </div>
+          <input id="consumptionLow" type="range" min="1" max="10" step="0.001" value="2.085" autocomplete="off">
+          <div class="field-row">
+            <label for="consumptionHigh">تا</label>
+            <span id="consumptionHighValue"></span>
+          </div>
+          <input id="consumptionHigh" type="range" min="1" max="10" step="0.001" value="2.549" autocomplete="off">
+        </div>
+        <p class="hint" id="consumptionHint">زیادی بکە بۆ ئەوەی خێرا لێخوڕین و لێخوڕینی قورستر تاقی بکەیتەوە.</p>
       </div>
 
       <div class="field field-row">

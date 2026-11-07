@@ -59,8 +59,30 @@
           <label for="consumption">Fuel consumption</label>
           <span id="consumptionValue"></span>
         </div>
-        <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317">
-        <p class="hint">Raise it to simulate faster acceleration, higher speeds or more demanding driving.</p>
+        <div class="choice" role="radiogroup" aria-label="Fuel consumption unit">
+          <label><input type="radio" name="consumptionUnit" value="l100" autocomplete="off" checked> Litres per 100 km</label>
+          <label><input type="radio" name="consumptionUnit" value="kml" autocomplete="off"> Km per litre</label>
+        </div>
+        <div class="choice" role="radiogroup" aria-label="Exact or range">
+          <label><input type="radio" name="consumptionMode" value="exact" autocomplete="off" checked> Exact</label>
+          <label><input type="radio" name="consumptionMode" value="range" autocomplete="off"> Range</label>
+        </div>
+        <div id="consumptionExact">
+          <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317" autocomplete="off">
+        </div>
+        <div id="consumptionRange" class="consumption-range" hidden>
+          <div class="field-row">
+            <label for="consumptionLow">From</label>
+            <span id="consumptionLowValue"></span>
+          </div>
+          <input id="consumptionLow" type="range" min="1" max="10" step="0.001" value="2.085" autocomplete="off">
+          <div class="field-row">
+            <label for="consumptionHigh">To</label>
+            <span id="consumptionHighValue"></span>
+          </div>
+          <input id="consumptionHigh" type="range" min="1" max="10" step="0.001" value="2.549" autocomplete="off">
+        </div>
+        <p class="hint" id="consumptionHint">Raise it to simulate faster acceleration, higher speeds or more demanding driving.</p>
       </div>
 
       <div class="field field-row">
