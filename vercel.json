@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/ku", "destination": "/", "permanent": true },
+    { "source": "/ku.html", "destination": "/", "permanent": true },
+    { "source": "/fuel-ku", "destination": "/fuel", "permanent": true },
+    { "source": "/fuel-ku.html", "destination": "/fuel", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/images/(.*)",

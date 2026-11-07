@@ -1,4 +1,4 @@
-// Fuel cost calculator, shared by fuel.html and fuel-ku.html.
+// Fuel cost calculator, shared by fuel.html (Kurdish) and fuel-en.html (English).
 (function () {
   'use strict';
 

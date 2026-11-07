@@ -3,13 +3,14 @@
 Portfolio site for Aland Kawa Ali: Qurany Piroz, Pirsa, CêIT, Gospel of Barnabas, Zewyar, Zriwe, Naser Subhani
 and the Fuel Cost Calculator.
 
-Plain HTML, CSS and a little JavaScript, no build step.
+Plain HTML, CSS and a little JavaScript, no build step. Central Kurdish is the default language; each page
+links to its English version.
 
 ```
-index.html     the home page in English (served at /)
-ku.html        the home page in Central Kurdish, right-to-left (served at /ku)
-fuel.html      the fuel cost calculator in English (served at /fuel)
-fuel-ku.html   the fuel cost calculator in Central Kurdish (served at /fuel-ku)
+index.html     the home page in Central Kurdish, right-to-left (served at /)
+en.html        the home page in English (served at /en)
+fuel.html      the fuel cost calculator in Central Kurdish (served at /fuel)
+fuel-en.html   the fuel cost calculator in English (served at /fuel-en)
 fuel.js        the calculator and its route map, shared by both calculator pages
 theme.js       the Dark/Light button in the header, shared by every page
 more.js        the smooth More/Less animation on the home pages
@@ -17,7 +18,7 @@ styles.css     all styles: one column on phones and tablets, two columns from 96
                light and dark follow the system setting until the visitor picks one with the button
 favicon.svg    the tab icon
 images/        app icons, the Kurdistan flag and the portrait photo
-vercel.json    clean URLs and image caching
+vercel.json    clean URLs, image caching, and redirects from the old Kurdish addresses (/ku, /fuel-ku)
 ```
 
 ## The route map
@@ -48,6 +49,6 @@ added later under the project's **Settings → Domains**.
 
 ## Adding a project
 
-Copy one `<article class="project">` block in `index.html`, change its `id`, text and links, and add a square
-icon to `images/`. Then do the same in `ku.html` with the Kurdish text (Kurdish digits, e.g. ٢٠٢٦), keeping
-the same `id`.
+Copy one `<article class="project">` block in `index.html`, change its `id` and its Kurdish text and links
+(Kurdish digits, e.g. ٢٠٢٦), and add a square icon to `images/`. Then do the same in `en.html` with the English
+text, keeping the same `id`.
