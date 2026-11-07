@@ -10,10 +10,12 @@
   if (!button) return;
 
   const systemDark = matchMedia('(prefers-color-scheme: dark)');
-  const kurdish = root.lang === 'ckb';
-  const text = kurdish
-    ? { dark: 'تاریک', light: 'ڕووناک', toDark: 'گۆڕین بۆ ڕەنگی تاریک', toLight: 'گۆڕین بۆ ڕەنگی ڕووناک' }
-    : { dark: 'Dark', light: 'Light', toDark: 'Switch to dark colours', toLight: 'Switch to light colours' };
+  const TEXT = {
+    ckb: { dark: 'تاریک', light: 'ڕووناک', toDark: 'گۆڕین بۆ ڕەنگی تاریک', toLight: 'گۆڕین بۆ ڕەنگی ڕووناک' },
+    ar: { dark: 'داكن', light: 'فاتح', toDark: 'التبديل إلى الألوان الداكنة', toLight: 'التبديل إلى الألوان الفاتحة' },
+    en: { dark: 'Dark', light: 'Light', toDark: 'Switch to dark colours', toLight: 'Switch to light colours' }
+  };
+  const text = TEXT[root.lang] || TEXT.en;
   const barColour = { light: '#ffffff', dark: '#111111' };
 
   const systemTheme = () => (systemDark.matches ? 'dark' : 'light');

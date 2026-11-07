@@ -430,17 +430,18 @@ input[type="range"] {
   }
 
   /* Home: the name, photo and introduction form a column that stays put while the projects
-     scroll beside it. The column is wide so the introduction stays short; on shorter windows
-     the photo gives up a little height, but never gets wider than 4:3, so it never turns
-     into a strip. */
+     scroll beside it. The column is wide so the introduction stays short and the theme and two
+     language links fit on the name's row; on shorter windows the photo gives up a little
+     height, but never gets wider than 4:3, so it never turns into a strip. */
   .home {
     display: grid;
-    grid-template-columns: 320px minmax(0, 640px);
+    grid-template-columns: 352px minmax(0, 624px);
     grid-template-rows: auto 1fr;
     justify-content: space-between;
     align-items: start;
-    column-gap: 64px;
+    column-gap: 48px;
   }
+  .home .head-links { column-gap: 12px; }
   .profile {
     grid-row: 1 / span 2;
     position: sticky;
@@ -456,7 +457,7 @@ input[type="range"] {
   }
   .portrait {
     width: 100%;
-    min-height: 240px;
+    min-height: 264px;
     object-fit: cover;
     object-position: 50% 30%;
   }
@@ -492,7 +493,8 @@ input[type="range"] {
 
 /* Windows too short for the photo at its smallest (4:3) plus the whole introduction: the column
    scrolls with the page rather than cutting off the end of the introduction. 630px fits the
-   longer Kurdish introduction with a little room to spare; if the introduction grows, raise this. */
+   longest introduction (the English one) with a little room to spare; if an introduction grows,
+   raise this. */
 @media (min-width: 960px) and (max-height: 629px) {
   .profile {
     position: static;

@@ -1,10 +1,10 @@
-// Fuel cost calculator, shared by fuel.html (Kurdish) and fuel-en.html (English).
+// Fuel cost calculator, shared by fuel.html (Kurdish), fuel-ar.html (Arabic) and fuel-en.html (English).
 (function () {
   'use strict';
 
-  const kurdish = document.documentElement.lang === 'ckb';
+  const TEXT = {};
 
-  const text = kurdish ? {
+  TEXT.ckb = {
     pickStart: 'کرتە لەسەر نەخشەکە بکە بۆ دیاریکردنی خاڵی دەستپێک.',
     pickEnd: 'ئێستا کرتە لەسەر شوێنی مەبەست بکە.',
     finding: 'گەڕان بەدوای ڕێگادا…',
@@ -26,7 +26,33 @@
     range: (low, high) => `${low} تا ${high}`,
     litres: n => `${n} لیتر`,
     money: n => `${n} دینار`
-  } : {
+  };
+
+  TEXT.ar = {
+    pickStart: 'انقر على الخريطة لتحديد نقطة البداية.',
+    pickEnd: 'الآن انقر على الوجهة.',
+    finding: 'جارٍ البحث عن الطريق…',
+    found: km => `${km} كيلومتر عبر الطريق. اسحب إحدى العلامتين لتغيير الطريق.`,
+    noRoute: 'لم يُعثر على طريق للسيارات بين هاتين النقطتين. حرّك إحدى العلامتين، أو اكتب طول الطريق بنفسك.',
+    failed: 'تعذّر إيجاد الطريق الآن. حاول مرة أخرى، أو اكتب طول الطريق بنفسك.',
+    noMap: 'تعذّر تحميل الخريطة. اكتب طول الطريق في الأسفل.',
+    start: 'البداية',
+    end: 'الوجهة',
+    consumption: {
+      l100: n => `${n} لتر لكل ١٠٠ كيلومتر`,
+      kml: n => `${n} كيلومتر لكل لتر`
+    },
+    hint: {
+      l100: 'ارفعه لتجربة القيادة الأسرع والأشدّ استهلاكًا.',
+      kml: 'اخفضه لتجربة القيادة الأسرع والأشدّ استهلاكًا.',
+      range: 'حدّد الطرفين؛ تُعرض التكلفة كتقدير تقريبي.'
+    },
+    range: (low, high) => `${low} إلى ${high}`,
+    litres: n => `${n} لتر`,
+    money: n => `${n} دينار`
+  };
+
+  TEXT.en = {
     pickStart: 'Tap the map to set the start.',
     pickEnd: 'Now tap the destination.',
     finding: 'Finding the route…',
@@ -50,12 +76,16 @@
     money: n => `${n} IQD`
   };
 
-  // Numbers are built in en-US, then written in Kurdish digits on the Kurdish page. Thousands
-  // get the Kurdish comma (٬), but decimals keep a plain point: the Kurdish decimal mark (٫)
-  // looks like a comma and was read as one. Even a point after a whole number reads as
-  // thousands ("٣٨.٨٤" as 38 thousand), so kilometres and dinars are shown as whole numbers and
-  // only litres keep decimals.
-  const localise = value => kurdish
+  const language = document.documentElement.lang;
+  const text = TEXT[language] || TEXT.en;
+  const easternDigits = language === 'ckb' || language === 'ar';
+
+  // Numbers are built in en-US, then written in Eastern Arabic digits on the Kurdish and Arabic
+  // pages. Thousands get the Arabic-script comma (٬), but decimals keep a plain point: the
+  // Arabic-script decimal mark (٫) looks like a comma and was read as one. Even a point after a
+  // whole number reads as thousands ("٣٨.٨٤" as 38 thousand), so kilometres and dinars are shown
+  // as whole numbers and only litres keep decimals.
+  const localise = value => easternDigits
     ? value.replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]).replace(/,/g, '٬')
     : value;
   const decimals = (value, places) => localise(value.toLocaleString('en-US', {
