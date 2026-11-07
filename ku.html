@@ -19,6 +19,8 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+  <script src="theme.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +29,11 @@
 </head>
 <body class="home">
   <header class="site-head">
-    <h1>ئەلەند کاوە عەلی</h1>
-    <a href="./" lang="en" hreflang="en">English</a>
+    <h1>ئەلەند کاوە عەلی <img class="flag" src="images/kurdistan-flag.svg" alt="ئاڵای کوردستان" title="کوردستان" width="24" height="16"></h1>
+    <div class="head-links">
+      <button class="theme-toggle link-button" type="button" hidden></button>
+      <a href="./" lang="en" hreflang="en">English</a>
+    </div>
   </header>
 
   <main>

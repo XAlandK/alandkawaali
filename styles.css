@@ -7,14 +7,24 @@
   --page-top: 32px;
 }
 
+/* Dark follows the system setting, unless the visitor picked a theme with the header button
+   (theme.js sets data-theme on <html>). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #111;
     --ink: #eaeaea;
     --muted: #9a9a9a;
     --line: #2c2c2c;
   }
 }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111;
+  --ink: #eaeaea;
+  --muted: #9a9a9a;
+  --line: #2c2c2c;
+}
+:root[data-theme="light"] { color-scheme: light; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -45,14 +55,31 @@ a:hover { color: var(--muted); }
 h1, h2, h3, p { margin: 0; }
 h1 { font-size: 1.25rem; font-weight: 600; }
 
-.site-head {
+.site-head,
+.head-links {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 16px;
 }
 
+/* The name (and the flag beside it) stays on one line; on the narrowest phones the
+   buttons on the other side move under it instead. */
+.site-head { flex-wrap: wrap; row-gap: 8px; }
+.site-head > :first-child { white-space: nowrap; }
+
 /* Home page */
+
+/* The Kurdistan flag beside the name. The outline keeps its white band visible on a white page. */
+.flag {
+  width: 24px;
+  height: 16px;
+  margin-inline-start: 6px;
+  vertical-align: -1px;
+  border-radius: 2px;
+  outline: 1px solid rgb(128 128 128 / 0.3);
+  outline-offset: -1px;
+}
 
 .intro { margin-top: 16px; }
 
@@ -183,6 +210,7 @@ details li + li { margin-top: 4px; }
   text-underline-offset: 3px;
   cursor: pointer;
 }
+.link-button:hover { color: var(--muted); }
 
 .field { margin-top: 24px; }
 
@@ -266,7 +294,12 @@ input[type="range"] {
   filter: grayscale(1) contrast(0.9) brightness(1.05);
 }
 @media (prefers-color-scheme: dark) {
-  .map.leaflet-container img.leaflet-tile { filter: grayscale(1) invert(1) brightness(0.8) contrast(0.9); }
+  :root:not([data-theme="light"]) .map.leaflet-container img.leaflet-tile {
+    filter: grayscale(1) invert(1) brightness(0.8) contrast(0.9);
+  }
+}
+:root[data-theme="dark"] .map.leaflet-container img.leaflet-tile {
+  filter: grayscale(1) invert(1) brightness(0.8) contrast(0.9);
 }
 
 .map .leaflet-control-zoom.leaflet-bar {
