@@ -50,9 +50,11 @@
     money: n => `${n} IQD`
   };
 
-  // Numbers are built in en-US, then written in Kurdish digits on the Kurdish page.
+  // Numbers are built in en-US, then written in Kurdish digits on the Kurdish page. Thousands
+  // get the Kurdish comma (٬), but decimals keep a plain point: the Kurdish decimal mark (٫)
+  // looks like a comma and was read as one.
   const localise = value => kurdish
-    ? value.replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]).replace(/,/g, '٬').replace(/\./g, '٫')
+    ? value.replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]).replace(/,/g, '٬')
     : value;
   const decimals = (value, places) => localise(value.toLocaleString('en-US', {
     minimumFractionDigits: places, maximumFractionDigits: places
