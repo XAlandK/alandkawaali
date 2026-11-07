@@ -160,6 +160,10 @@ details .less,
 details[open] .more { display: none; }
 details[open] .less { display: inline; }
 
+/* While more.js folds a list closed, the label already reads "More". */
+details[open].closing .more { display: inline; }
+details[open].closing .less { display: none; }
+
 details ul {
   clear: both;
   margin: 8px 0 0;
