@@ -16,7 +16,7 @@ more.js        the smooth More/Less animation on the home pages
 styles.css     all styles: one column on phones and tablets, two columns from 960px wide;
                light and dark follow the system setting until the visitor picks one with the button
 favicon.svg    the tab icon
-images/        app icons and the Kurdistan flag
+images/        app icons, the Kurdistan flag and the portrait photo
 vercel.json    clean URLs and image caching
 ```
 

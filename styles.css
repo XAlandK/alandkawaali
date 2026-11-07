@@ -81,6 +81,17 @@ h1 { font-size: 1.25rem; font-weight: 600; }
   outline-offset: -1px;
 }
 
+.about { margin-top: 24px; }
+
+.portrait {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: var(--line);
+}
+
 .intro { margin-top: 16px; }
 
 .section-label {
@@ -388,7 +399,7 @@ input[type="range"] {
     padding-bottom: 80px;
   }
 
-  /* Home: the introduction stays in view beside the list of projects. */
+  /* Home: the photo and introduction sit beside the list of projects. */
   .home main,
   .home .contact {
     display: grid;
@@ -396,12 +407,11 @@ input[type="range"] {
     justify-content: space-between;
     column-gap: 64px;
   }
-  .home .intro {
-    position: sticky;
-    top: var(--page-top);
+  .home .about {
     align-self: start;
     margin-top: 48px;
   }
+  .portrait { width: 100%; }
   .home .contact p { grid-column: 2; }
 
   /* Calculator: the inputs and result on one side, the map filling the other. */
@@ -427,5 +437,14 @@ input[type="range"] {
     height: auto;
     min-height: 480px;
     margin-top: 0;
+  }
+}
+
+/* The photo and introduction stay in view while the projects scroll, but only when the window
+   is tall enough to show them whole; otherwise the end of the introduction would be cut off. */
+@media (min-width: 960px) and (min-height: 700px) {
+  .home .about {
+    position: sticky;
+    top: var(--page-top);
   }
 }
