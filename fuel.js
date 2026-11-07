@@ -99,7 +99,7 @@
   // OpenStreetMap's own tiles; styles.css turns them grey (and dark in dark mode).
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · ' +
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> — ' +
       '<a href="https://project-osrm.org">OSRM</a>'
   }).addTo(map);
 
