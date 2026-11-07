@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>حاسبة تكلفة البنزين — ئەلەند کاوە عەلی</title>
+  <title>حَاسِبَةُ تَكْلِفَةِ الْبَنْزِينِ — ئەلەند کاوە عەلی</title>
+  <!-- The descriptions for search engines and link previews stay without harakat, so searches match. -->
   <meta name="description" content="قدّر تكلفة البنزين السوبر لرحلة بسيارة BYD Qin Plus DM-i. اختر الطريق على الخريطة وهي تقيس المسافة بنفسها.">
   <meta name="author" content="ئەلەند کاوە عەلی">
 
@@ -42,70 +43,70 @@
 
   <main class="calc">
     <div class="calc-intro">
-      <h1>حاسبة تكلفة البنزين</h1>
-      <p class="lead">قدّر تكلفة البنزين السوبر لرحلة بسيارة <span lang="en" dir="ltr">BYD Qin Plus DM-i</span>.</p>
+      <h1>حَاسِبَةُ تَكْلِفَةِ الْبَنْزِينِ</h1>
+      <p class="lead">قَدِّرْ تَكْلِفَةَ الْبَنْزِينِ السُّوبَرِ لِرِحْلَةٍ بِسَيَّارَةِ <span lang="en" dir="ltr">BYD Qin Plus DM-i</span>.</p>
     </div>
 
     <div class="calc-map">
-      <div id="map" class="map" dir="ltr" role="group" aria-label="خريطة لاختيار الطريق"></div>
+      <div id="map" class="map" dir="ltr" role="group" aria-label="خَرِيطَةٌ لِاخْتِيَارِ الطَّرِيقِ"></div>
       <p class="map-status">
         <span id="mapStatus" aria-live="polite"></span>
-        <button id="clearRoute" class="link-button" type="button" hidden>مسح</button>
+        <button id="clearRoute" class="link-button" type="button" hidden>مَسْحٌ</button>
       </p>
     </div>
 
     <div class="calc-form">
       <div class="field field-row">
-        <label for="distance">طول الطريق</label>
-        <span><input id="distance" type="number" min="0" step="0.1" value="90" dir="ltr"> <span class="unit">كيلومتر</span></span>
+        <label for="distance">طُولُ الطَّرِيقِ</label>
+        <span><input id="distance" type="number" min="0" step="0.1" value="90" dir="ltr"> <span class="unit">كِيلُومِتْر</span></span>
       </div>
 
       <div class="field">
         <div class="field-row">
-          <label for="consumption">استهلاك البنزين</label>
+          <label for="consumption">اسْتِهْلَاكُ الْبَنْزِينِ</label>
           <span id="consumptionValue"></span>
         </div>
-        <div class="choice" role="radiogroup" aria-label="وحدة استهلاك البنزين">
-          <label><input type="radio" name="consumptionUnit" value="l100" autocomplete="off" checked> لتر لكل ١٠٠ كيلومتر</label>
-          <label><input type="radio" name="consumptionUnit" value="kml" autocomplete="off"> كيلومتر لكل لتر</label>
+        <div class="choice" role="radiogroup" aria-label="وَحْدَةُ اسْتِهْلَاكِ الْبَنْزِينِ">
+          <label><input type="radio" name="consumptionUnit" value="l100" autocomplete="off" checked> لِتْرٌ لِكُلِّ ١٠٠ كِيلُومِتْرٍ</label>
+          <label><input type="radio" name="consumptionUnit" value="kml" autocomplete="off"> كِيلُومِتْرٌ لِكُلِّ لِتْرٍ</label>
         </div>
-        <div class="choice" role="radiogroup" aria-label="رقم دقيق أو بين رقمين">
-          <label><input type="radio" name="consumptionMode" value="exact" autocomplete="off" checked> دقيق</label>
-          <label><input type="radio" name="consumptionMode" value="range" autocomplete="off"> بين رقمين</label>
+        <div class="choice" role="radiogroup" aria-label="رَقْمٌ دَقِيقٌ أَوْ بَيْنَ رَقْمَيْنِ">
+          <label><input type="radio" name="consumptionMode" value="exact" autocomplete="off" checked> دَقِيقٌ</label>
+          <label><input type="radio" name="consumptionMode" value="range" autocomplete="off"> بَيْنَ رَقْمَيْنِ</label>
         </div>
         <div id="consumptionExact">
           <input id="consumption" type="range" min="1" max="10" step="0.001" value="2.317" autocomplete="off">
         </div>
         <div id="consumptionRange" class="consumption-range" hidden>
           <div class="field-row">
-            <label for="consumptionLow">من</label>
+            <label for="consumptionLow">مِنْ</label>
             <span id="consumptionLowValue"></span>
           </div>
           <input id="consumptionLow" type="range" min="1" max="10" step="0.001" value="2.085" autocomplete="off">
           <div class="field-row">
-            <label for="consumptionHigh">إلى</label>
+            <label for="consumptionHigh">إِلَى</label>
             <span id="consumptionHighValue"></span>
           </div>
           <input id="consumptionHigh" type="range" min="1" max="10" step="0.001" value="2.549" autocomplete="off">
         </div>
-        <p class="hint" id="consumptionHint">ارفعه لتجربة القيادة الأسرع والأشدّ استهلاكًا.</p>
+        <p class="hint" id="consumptionHint">ارْفَعْهُ لِتَجْرِبَةِ الْقِيَادَةِ الْأَسْرَعِ وَالْأَشَدِّ اسْتِهْلَاكًا.</p>
       </div>
 
       <div class="field field-row">
-        <label for="price">سعر البنزين السوبر</label>
-        <span><input id="price" type="number" inputmode="numeric" min="0" step="1" value="1900" dir="ltr"> <span class="unit">دينار/لتر</span></span>
+        <label for="price">سِعْرُ الْبَنْزِينِ السُّوبَرِ</label>
+        <span><input id="price" type="number" inputmode="numeric" min="0" step="1" value="1900" dir="ltr"> <span class="unit">دِينَار/لِتْر</span></span>
       </div>
 
       <dl class="result">
-        <div class="total" aria-live="polite"><dt>التكلفة التقديرية للبنزين</dt><dd id="cost"></dd></div>
-        <div><dt>البنزين</dt><dd id="litres"></dd></div>
-        <div><dt>لكل كيلومتر</dt><dd id="perKm"></dd></div>
-        <div><dt>لكل ١٠٠ كيلومتر</dt><dd id="per100"></dd></div>
+        <div class="total" aria-live="polite"><dt>التَّكْلِفَةُ التَّقْدِيرِيَّةُ لِلْبَنْزِينِ</dt><dd id="cost"></dd></div>
+        <div><dt>الْبَنْزِينُ</dt><dd id="litres"></dd></div>
+        <div><dt>لِكُلِّ كِيلُومِتْرٍ</dt><dd id="perKm"></dd></div>
+        <div><dt>لِكُلِّ ١٠٠ كِيلُومِتْرٍ</dt><dd id="per100"></dd></div>
       </dl>
 
       <p class="note">
-        الاستهلاك الابتدائي مُقاس فعليًّا: ٥.٢٦ لتر لمسافة ٢٢٧ كيلومترًا، بـ١٠٬٠٠٠ دينار. يحسب البنزين فقط، ولا
-        يشمل تكلفة الكهرباء.
+        الِاسْتِهْلَاكُ الِابْتِدَائِيُّ مُقَاسٌ فِعْلِيًّا: ٥.٢٦ لِتْرٍ لِمَسَافَةِ ٢٢٧ كِيلُومِتْرًا، بِـ١٠٬٠٠٠ دِينَارٍ. يَحْسُبُ
+        الْبَنْزِينَ فَقَطْ، وَلَا يَشْمَلُ تَكْلِفَةَ الْكَهْرَبَاءِ.
       </p>
     </div>
   </main>
