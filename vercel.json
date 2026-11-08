@@ -6,7 +6,7 @@
     { "source": "/ku.html", "destination": "/", "permanent": true },
     { "source": "/fuel-ku", "destination": "/fuel", "permanent": true },
     { "source": "/fuel-ku.html", "destination": "/fuel", "permanent": true },
-    { "source": "/rega.apk", "destination": "https://github.com/XAlandK/rega-releases/releases/download/v1.2.2/rega-1.2.2.apk", "permanent": false }
+    { "source": "/rega.apk", "destination": "https://github.com/XAlandK/rega-releases/releases/download/v1.2.3/rega-1.2.3.apk", "permanent": false }
   ],
   "headers": [
     {
