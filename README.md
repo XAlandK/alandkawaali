@@ -1,7 +1,7 @@
 # alandkawaali
 
-Portfolio site for Aland Kawa Ali: Qurany Piroz, Pirsa, CêIT, Gospel of Barnabas, Zewyar, Zriwe, Naser Subhani,
-the Fuel Cost Calculator and Rêga.
+Portfolio site for Aland Kawa Ali: Qurany Piroz, Pirsa, CêIT, Gospel of Barnabas, Zewyar, Zriwe, Arsman,
+Naser Subhani, the Fuel Cost Calculator and Rêga.
 
 Plain HTML, CSS and a little JavaScript, no build step. Central Kurdish is the default language; each page
 links to its Arabic and English versions.
