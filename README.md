@@ -14,6 +14,9 @@ fuel.html      the fuel cost calculator in Central Kurdish (served at /fuel)
 fuel-ar.html   the fuel cost calculator in Arabic (served at /fuel-ar)
 fuel-en.html   the fuel cost calculator in English (served at /fuel-en)
 fuel.js        the calculator and its route map, shared by the three calculator pages
+scientists.html «زانا سەرکەوتووەکان», successful scientists in Kurdish, English and Arabic in one file (served at
+               /scientists; ?lang=ckb|en|ar picks the language). Made outside this repository: copy in the
+               --site=alandkawaali build, do not edit it here
 theme.js       the Dark/Light button in the header, shared by every page
 more.js        the smooth More/Less animation on the home pages
 styles.css     all styles: one column on phones and tablets, two columns from 960px wide;
